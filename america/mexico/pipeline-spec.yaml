@@ -1,0 +1,220 @@
+cuenta-publica:
+  schedule:
+    crontab: '17 * * * *'
+  pipeline:
+    -
+      run: simple_remote_source
+      parameters:
+        resources:
+          -
+#            url: "http://localhost:5555/Cuenta_Publica_2010.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2010.csv"
+            encoding: windows-1252
+            mediatype: text/csv
+          -
+#            url: "http://localhost:5555/Cuenta_Publica_2011.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2011.csv"
+            encoding: windows-1252
+            mediatype: text/csv
+          -
+#            url: "http://localhost:5555/Cuenta_Publica_2012.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2012.csv"
+            encoding: windows-1252
+            mediatype: text/csv
+          -
+#            url: "http://localhost:5555/Cuenta_Publica_2013_RA.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2013_RA.csv"
+            encoding: windows-1252
+            mediatype: text/csv
+          -
+#            url: "http://localhost:5555/Cuenta_Publica_2014_RA.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2014_RA.csv"
+            encoding: windows-1252
+            mediatype: text/csv
+          -
+#            url: "http://localhost:5555/Cuenta_Publica_2015_GF.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2015_GF.csv"
+            encoding: windows-1252
+            mediatype: text/csv
+          -
+#            url: "http://localhost:5555/PEF2016_AC01.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/PEF2016_AC01.csv"
+            encoding: cp850
+            mediatype: text/csv
+    -
+      run: downloader
+    -
+      run: concat
+      parameters:
+        resource-name: cuenta_publica
+        column-aliases:
+          'Actividad Institucional':
+            - 'AI'
+          'Adefas':
+            - 'ADEFAS'
+          'Aprobado':
+            - 'PEF_2016'
+            - 'Importe Presupuesto de Egresos de la Federación'
+            - 'Importe Presupuesto de Egresos de la Federación (PEF)'
+          'Ciclo': null
+          'Clave de cartera':
+            - 'CLAVE_CARTERA'
+          'Descripción de Fuente de Financiamiento':
+            - 'FUENTE_FINAN_DESCRIPCION'
+          'Descripción de Función':
+            - 'FUNCIONL_DESCRIPCION'
+          'Descripción de Grupo Funcional':
+            - 'Descripción de Finalidad'
+            - 'GRUPO_FUN_DESCRIPCION'
+          'Descripción de Objeto del Gasto':
+            - 'CONCEPTO_DESCRIPCION'
+          'Descripción de Programa Presupuestario':
+            - 'PROGR_PRES_DESCRIPCION'
+          'Descripción de Ramo':
+            - 'RAMO_DESCRIPCION'
+          'Descripción de Reasignacion':
+            - 'REASIGNACION_DESCRIPCION'
+          'Descripción de Subfunción':
+            - 'SUBFUNCIONL_DESCRIPCION'
+          'Descripción de Tipo de Gasto':
+            - 'TIPO_GASTO_DESCRIPCION'
+          'Descripción de Unidad Responsable':
+            - 'UNIDAD_DESCRIPCION'
+          'Descripción de la Actividad Institucional':
+            - 'ACTIVIDAD_INST_DESCRIPCION'
+            - 'Descripción de Actividad Institucional'
+          'Descripción de la entidad federativa':
+            - 'ENTIDAD_FED_DESCRIPCION'
+          'Descripción de la modalidad del programa presupuestario':
+            - 'MODALIDAD_DESCRIPCION'
+            - 'Descripción del Identificador del Programa Presupuestario'
+            - 'Descripción del Identificador de Programa Presupuestario'
+          'Devengado': null
+          'Ejercicio': null
+          'Ejercido': null
+          'Entidad Federativa':
+            - 'EF'
+          'Fuente de Financiamiento':
+            - 'FF'
+          'Función':
+            - 'FN'
+          'Grupo Funcional':
+            - 'Finalidad'
+            - 'GF'
+          'Modalidad del Programa presupuestario':
+            - 'MOD'
+            - 'Identificador de Programa Presupuestario'
+            - 'Identificador del Programa Presupuestario'
+          'Modificado': null
+          'Objeto del Gasto':
+            - 'CONCEPTO'
+          'Pagado': null
+          'Programa Presupuestario':
+            - 'PP'
+          'Ramo': null
+          'Reasignacion':
+            - 'RA'
+          'Subfunción':
+            - 'SF'
+          'Tipo de Gasto':
+            - 'TG'
+          'Unidad Responsable':
+            - 'UNIDAD'
+    -
+      run: clean-dashes
+      parameters:
+        columns:
+          - 'Ejercido'
+          - 'Devengado'
+          - 'Aprobado'
+          - 'Pagado'
+          - 'Modificado'
+          - 'Adefas'
+          - 'Ejercicio'
+    -
+      run: objeto-del-gasto
+    -
+      run: delete-columns
+      parameters:
+        columns:
+          - 'Reasignacion'
+          - 'Objeto del Gasto'
+          - 'Descripción de Reasignacion'
+          - 'Descripción de Objeto del Gasto'
+    -
+      run: metadata
+      parameters:
+        metadata:
+          name: "mexico-federal-budget"
+          title: "Mexican Federal Budget 2010-2016"
+          regionCode: na
+          countryCode: MX
+          fiscalPeriod:
+            start: "2010-01-01"
+            end: "2016-12-31"
+    -
+      run: fiscal.model
+      parameters:
+        options:
+          'Ejercido':
+            currency: MXN
+          'Devengado':
+            currency: MXN
+          'Aprobado':
+            currency: MXN
+          'Pagado':
+            currency: MXN
+          'Modificado':
+            currency: MXN
+          'Adefas':
+            currency: MXN
+          'Ejercicio':
+            currency: MXN
+        os-types:
+          'Actividad Institucional': 'functional-classification:generic:level4:code:full'
+          'Adefas': 'value'
+          'Aprobado': 'value'
+          'Capitulo': 'economic-classification:generic:level1:code:full'
+          'Ciclo': 'date:fiscal-year'
+          'Clave de cartera': 'budget-line-id'
+          'Concepto': 'economic-classification:generic:level2:code:full'
+          'Descripción de Capitulo': 'economic-classification:generic:level1:label'
+          'Descripción de Concepto': 'economic-classification:generic:level2:label'
+          'Descripción de Fuente de Financiamiento': 'fin-source:generic:label'
+          'Descripción de Función': 'functional-classification:generic:level2:label'
+          'Descripción de Grupo Funcional': 'functional-classification:generic:level1:label'
+          'Descripción de Partida Específica': 'economic-classification:generic:level4:label'
+          'Descripción de Partida Genérica': 'economic-classification:generic:level3:label'
+          'Descripción de Programa Presupuestario': 'activity:generic:project:label'
+          'Descripción de Ramo': 'administrative-classification:generic:level1:label'
+          'Descripción de Subfunción': 'functional-classification:generic:level3:label'
+          'Descripción de Tipo de Gasto': 'expenditure-type:label'
+          'Descripción de Unidad Responsable': 'administrative-classification:generic:level2:label'
+          'Descripción de la Actividad Institucional': 'functional-classification:generic:level4:label'
+          'Descripción de la entidad federativa': 'geo-source:target:title'
+          'Descripción de la modalidad del programa presupuestario': 'activity:generic:program:label'
+          'Devengado': 'value'
+          'Ejercicio': 'value'
+          'Ejercido': 'value'
+          'Entidad Federativa': 'geo-source:target:code'
+          'Fuente de Financiamiento': 'fin-source:generic:code'
+          'Función': 'functional-classification:generic:level2:code:full'
+          'Grupo Funcional': 'functional-classification:generic:level1:code:full'
+          'Modalidad del Programa presupuestario': 'activity:generic:program:code'
+          'Modificado': 'value'
+          'Pagado': 'value'
+          'Partida Específica': 'economic-classification:generic:level4:code:full'
+          'Partida Genérica': 'economic-classification:generic:level3:code:full'
+          'Programa Presupuestario': 'activity:generic:project:code'
+          'Ramo': 'administrative-classification:generic:level1:code:full'
+          'Subfunción': 'functional-classification:generic:level3:code:full'
+          'Tipo de Gasto': 'expenditure-type:code'
+          'Unidad Responsable': 'administrative-classification:generic:level2:code:full'
+    -
+      run: dump
+      parameters:
+        out-file: mexico-fdp.zip
+    -
+      run: fiscal.upload
+      parameters:
+        in-file: mexico-fdp.zip
