@@ -1,3 +1,7 @@
+#encoding: utf8
+import os
+import csv
+
 from datapackage_pipelines.wrapper import ingest, spew
 
 params, datapackage, res_iter = ingest()
@@ -6,14 +10,12 @@ columns = params.get('columns')
 
 
 new_columns = [
-    'Partida Genérica',
-    'Partida Específica',
-    'Descripción de Partida Específica',
-    'Descripción de Partida Genérica',
-    'Capitulo',
-    'Descripción de Capitulo',
-    'Concepto',
-    'Descripción de Concepto',
+    'PARTIDA_GENERICA',
+    'PARTIDA_ESPECIFICA',
+    'DESC_PARTIDA_ESPECIFICA',
+    'DESC_PARTIDA_GENERICA',
+    'ID_CAPITULO',
+    'DESC_CAPITULO',
 ]
 
 for column in new_columns:
@@ -23,39 +25,45 @@ for column in new_columns:
     })
 
 
-def lookup(value, catalog, year):
-    return '{}/{}/{}'.format(year, catalog, value)
+lookup_map = {}
+for kind in ['partida_específica',  'partida_generica',
+             'capitulo', 'concepto']:
+    reader = csv.reader(open(os.path.join('data', 'objeto_del_gasto',  kind+'.csv')))
+    next(reader)
+    for row in reader:
+        key, value, *_ = row
+        lookup_map.setdefault(kind, {})[key] = value
+
+
+def lookup(key, catalog, year):
+    return lookup_map[catalog].get(key)
 
 
 def process_row(row):
-    year = row['Ciclo']
+    year = int(row['CICLO'])
 
     # Skip the LAST year of the dataset (currently 2016) it has split columns already
-    if year >= '2016':
+    if year >= 2016:
         return row
 
-    objeto = row['Objeto del Gasto']
+    objeto = row['ID_CONCEPTO']
     if objeto:
-        row['Capitulo'] = objeto[0] + '000'
-        row['Concepto'] = objeto[:2] + '00'
-        row['Descripción de Capitulo'] = lookup(row['Capitulo'], 'capitulo', year)
-        row['Descripción de Concepto'] = lookup(row['Concepto'], 'concepto', year)
+        row['ID_CAPITULO'] = objeto[0] + '000'
+        row['ID_CONCEPTO'] = objeto[:2] + '00'
+        row['DESC_CAPITULO'] = lookup(row['ID_CAPITULO'], 'capitulo', year)
+        row['DESC_CONCEPTO'] = lookup(row['ID_CONCEPTO'], 'concepto', year)
 
-        if len(objeto) == 4:
-            row['Partida Genérica'] = objeto[:3]
+        nb_generica_digits = 4 if year in (2008, 2009, 2010) else 3
 
-        row['Descripción de Partida Genérica'] = lookup(row.get('Partida Genérica'), 'partida_generica', year)
+    if objeto and len(objeto)>=4:
+        row['PARTIDA_GENERICA'] = objeto[:nb_generica_digits]
 
-    try:
-        int(year)
-    except:
-        import logging
-        logging.error('RRR '+repr(row))
+    row['DESC_PARTIDA_GENERICA'] = lookup(row.get('PARTIDA_GENERICA'), 'partida_generica', year)
 
-    if int(year) not in (2008, 2009, 2010):
-        if len(objeto) == 5:
-            row['Partida Específica'] = objeto
-            row['Descripción de Partida Específica'] = lookup(row['Partida Específica'], 'partida_especifica', year)
+    if year not in (2008, 2009, 2010):
+        if objeto and len(objeto) >= 5:
+            row['PARTIDA_ESPECIFICA'] = objeto
+            row['DESC_PARTIDA_ESPECIFICA'] = lookup(row.get('PARTIDA_ESPECIFICA'), 'partida_específica', year)
 
     return row
 

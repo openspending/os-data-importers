@@ -1,136 +1,138 @@
 cuenta-publica:
   schedule:
-    crontab: '17 * * * *'
+    crontab: '50 */6 * * *'
   pipeline:
     -
       run: simple_remote_source
       parameters:
         resources:
+
+          -
+#            url: "http://localhost:5555/Cuenta_Publica_2010.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2008.csv"
+#            url: "file://data/Cuenta_Publica_2008.csv"
+            encoding: windows-1252
+            mediatype: text/csv
+          -
+#            url: "http://localhost:5555/Cuenta_Publica_2010.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2009.csv"
+#            url: "file://data/Cuenta_Publica_2009.csv"
+            encoding: windows-1252
+            mediatype: text/csv
           -
 #            url: "http://localhost:5555/Cuenta_Publica_2010.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2010.csv"
+#            url: "file://data/Cuenta_Publica_2010.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
 #            url: "http://localhost:5555/Cuenta_Publica_2011.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2011.csv"
+#            url: "file://data/Cuenta_Publica_2011.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
 #            url: "http://localhost:5555/Cuenta_Publica_2012.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2012.csv"
+#            url: "file://data/Cuenta_Publica_2012.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
 #            url: "http://localhost:5555/Cuenta_Publica_2013_RA.csv"
-            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2013_RA.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2013_ra_ecd.csv"
+#            url: "file://data/CP_2013.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
 #            url: "http://localhost:5555/Cuenta_Publica_2014_RA.csv"
-            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2014_RA.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2014_ra_ecd.csv"
+#            url: "file://data/CP_2014.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
 #            url: "http://localhost:5555/Cuenta_Publica_2015_GF.csv"
-            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2015_GF.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2015_ra_ecd_epe.csv"
+#            url: "file://data/CP_2015.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
 #            url: "http://localhost:5555/PEF2016_AC01.csv"
-            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/PEF2016_AC01.csv"
-            encoding: cp850
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_2t_2016.csv"
+#            url: "file://data/PEF_AC01_2t_2016.csv"
+            encoding: windows-1252
+#            encoding: cp850
             mediatype: text/csv
     -
       run: downloader
+      cache: true
     -
       run: concat
       parameters:
         resource-name: cuenta_publica
         column-aliases:
-          'Actividad Institucional':
-            - 'AI'
-          'Adefas':
-            - 'ADEFAS'
-          'Aprobado':
-            - 'PEF_2016'
-            - 'Importe Presupuesto de Egresos de la Federación'
-            - 'Importe Presupuesto de Egresos de la Federación (PEF)'
-          'Ciclo': null
-          'Clave de cartera':
-            - 'CLAVE_CARTERA'
-          'Descripción de Fuente de Financiamiento':
-            - 'FUENTE_FINAN_DESCRIPCION'
-          'Descripción de Función':
-            - 'FUNCIONL_DESCRIPCION'
-          'Descripción de Grupo Funcional':
-            - 'Descripción de Finalidad'
-            - 'GRUPO_FUN_DESCRIPCION'
-          'Descripción de Objeto del Gasto':
-            - 'CONCEPTO_DESCRIPCION'
-          'Descripción de Programa Presupuestario':
-            - 'PROGR_PRES_DESCRIPCION'
-          'Descripción de Ramo':
-            - 'RAMO_DESCRIPCION'
-          'Descripción de Reasignacion':
-            - 'REASIGNACION_DESCRIPCION'
-          'Descripción de Subfunción':
-            - 'SUBFUNCIONL_DESCRIPCION'
-          'Descripción de Tipo de Gasto':
-            - 'TIPO_GASTO_DESCRIPCION'
-          'Descripción de Unidad Responsable':
-            - 'UNIDAD_DESCRIPCION'
-          'Descripción de la Actividad Institucional':
-            - 'ACTIVIDAD_INST_DESCRIPCION'
-            - 'Descripción de Actividad Institucional'
-          'Descripción de la entidad federativa':
-            - 'ENTIDAD_FED_DESCRIPCION'
-          'Descripción de la modalidad del programa presupuestario':
-            - 'MODALIDAD_DESCRIPCION'
-            - 'Descripción del Identificador del Programa Presupuestario'
-            - 'Descripción del Identificador de Programa Presupuestario'
-          'Devengado': null
-          'Ejercicio': null
-          'Ejercido': null
-          'Entidad Federativa':
-            - 'EF'
-          'Fuente de Financiamiento':
-            - 'FF'
-          'Función':
-            - 'FN'
-          'Grupo Funcional':
-            - 'Finalidad'
-            - 'GF'
-          'Modalidad del Programa presupuestario':
-            - 'MOD'
-            - 'Identificador de Programa Presupuestario'
-            - 'Identificador del Programa Presupuestario'
-          'Modificado': null
-          'Objeto del Gasto':
-            - 'CONCEPTO'
-          'Pagado': null
-          'Programa Presupuestario':
-            - 'PP'
-          'Ramo': null
-          'Reasignacion':
-            - 'RA'
-          'Subfunción':
-            - 'SF'
-          'Tipo de Gasto':
-            - 'TG'
-          'Unidad Responsable':
-            - 'UNIDAD'
+          CICLO: [Ciclo]
+          DESC_AI: ["Descripci\xF3n de la Actividad Institucional", ACTIVIDAD_INST_DESCRIPCION,
+            "Descripci\xF3n de Actividad Institucional"]
+          DESC_CAPITULO: ["Descripci\xF3n de Capitulo"]
+          DESC_CONCEPTO: ["Descripci\xF3n de Concepto", "Descripci\xF3n de Objeto del Gasto",
+            CONCEPTO_DESCRIPCION]
+          DESC_ENT_FED: ["Descripci\xF3n de Entidad Federativa", "Descripci\xF3n de la entidad\
+              \ federativa", ENTIDAD_FED_DESCRIPCION]
+          DESC_FF: ["Descripci\xF3n de Fuente de Financiamiento", FUENTE_FINAN_DESCRIPCION]
+          DESC_FUNCION: ["Descripci\xF3n de Funci\xF3n", FUNCIONL_DESCRIPCION]
+          DESC_GPO_FUNCIONAL: ["Descripci\xF3n de Grupo Funcional", "Descripci\xF3n de Finalidad",
+            GRUPO_FUN_DESCRIPCION]
+          DESC_MODALIDAD: ["Descripci\xF3n de la modalidad del programa presupuestario", MODALIDAD_DESCRIPCION,
+            "Descripci\xF3n del Identificador del Programa Presupuestario", "Descripci\xF3n\
+              \ del Identificador de Programa Presupuestario"]
+          DESC_PARTIDA_ESPECIFICA: ["Descripci\xF3n de Partida Espec\xEDfica", "Descripcion\
+              \ de Partida Espec\xEDfica"]
+          DESC_PARTIDA_GENERICA: ["Descripci\xF3n de Partida Gen\xE9rica"]
+          DESC_PP: ["Descripci\xF3n de Programa Presupuestario", PROGR_PRES_DESCRIPCION]
+          DESC_RAMO: ["Descripci\xF3n de Ramo", RAMO_DESCRIPCION]
+          DESC_REASIGNATION: ["Descripci\xF3n de Reasignacion", REASIGNACION_DESCRIPCION]
+          DESC_SUBFUNCION: ["Descripci\xF3n de Subfunci\xF3n", SUBFUNCIONL_DESCRIPCION, "Descripci\xF3\
+              n de subfunci\xF3n"]
+          DESC_TIPOGASTO: ["Descripci\xF3n de Tipo de Gasto", TIPO_GASTO_DESCRIPCION]
+          DESC_UR: ["Descripci\xF3n de Unidad Responsable", UNIDAD_DESCRIPCION]
+          ENTIDAD: [Entidad Federativa, EF]
+          GPO_FUNCIONAL: [Grupo Funcional, Finalidad, GF]
+          ID_AI: [Actividad Institucional, AI]
+          ID_CAPITULO: [Capitulo]
+          ID_CONCEPTO: [Objeto del Gasto, Concepto]
+          ID_FF: [Fuente de Financiamiento, FF, Fuente de Finaciamiento]
+          ID_FUNCION: ["Funci\xF3n", FN]
+          ID_MODALIDAD: [Modalidad del Programa presupuestario, MOD, Identificador de Programa
+              Presupuestario, Identificador del Programa Presupuestario]
+          ID_PP: [PP, Programa Presupuestario]
+          ID_PPI: [Clave de cartera, CLAVE_CARTERA]
+          ID_RAMO: [Ramo, RAMO]
+          ID_SUBFUNCION: ["Subfunci\xF3n", SF]
+          ID_TIPOGASTO: [TG, Tipo de Gasto]
+          ID_UR: [Unidad Responsable, UNIDAD]
+          MONTO_ADEFAS: [Adefas, ADEFAS]
+          MONTO_APROBADO: [Aprobado, PEF_2016, "Importe Presupuesto de Egresos de la Federaci\xF3\
+              n", "Importe Presupuesto de Egresos de la Federaci\xF3n (PEF)"]
+          MONTO_DEVENGADO: [Devengado]
+          MONTO_EJERCICIO: [Ejercicio]
+          MONTO_EJERCIDO: [Ejercido]
+          MONTO_MODIFICADO: [Modificado]
+          MONTO_PAGADO: [Pagado]
+          PARTIDA_ESPECIFICA: ["Partida Espec\xEDfica"]
+          PARTIDA_GENERICA: ["Partida Gen\xE9rica"]
+          RA: [Reasignacion]
     -
       run: clean-dashes
+      cache: true
       parameters:
         columns:
-          - 'Ejercido'
-          - 'Devengado'
-          - 'Aprobado'
-          - 'Pagado'
-          - 'Modificado'
-          - 'Adefas'
-          - 'Ejercicio'
+          - 'MONTO_EJERCIDO'
+          - 'MONTO_DEVENGADO'
+          - 'MONTO_APROBADO'
+          - 'MONTO_PAGADO'
+          - 'MONTO_MODIFICADO'
+          - 'MONTO_ADEFAS'
+          - 'MONTO_EJERCICIO'
     -
       run: objeto-del-gasto
     -
@@ -143,6 +145,7 @@ cuenta-publica:
           - 'Descripción de Objeto del Gasto'
     -
       run: metadata
+      validate: true
       parameters:
         metadata:
           name: "mexico-federal-budget"
@@ -150,66 +153,105 @@ cuenta-publica:
           regionCode: na
           countryCode: MX
           fiscalPeriod:
-            start: "2010-01-01"
+            start: "2008-01-01"
             end: "2016-12-31"
     -
       run: fiscal.model
       parameters:
         options:
-          'Ejercido':
+          'MONTO_EJERCIDO':
             currency: MXN
-          'Devengado':
+          'MONTO_DEVENGADO':
             currency: MXN
-          'Aprobado':
+          'MONTO_APROBADO':
             currency: MXN
-          'Pagado':
+          'MONTO_PAGADO':
             currency: MXN
-          'Modificado':
+          'MONTO_MODIFICADO':
             currency: MXN
-          'Adefas':
+          'MONTO_ADEFAS':
             currency: MXN
-          'Ejercicio':
+          'MONTO_EJERCICIO':
             currency: MXN
         os-types:
-          'Actividad Institucional': 'functional-classification:generic:level4:code:full'
-          'Adefas': 'value'
-          'Aprobado': 'value'
-          'Capitulo': 'economic-classification:generic:level1:code:full'
-          'Ciclo': 'date:fiscal-year'
-          'Clave de cartera': 'budget-line-id'
-          'Concepto': 'economic-classification:generic:level2:code:full'
-          'Descripción de Capitulo': 'economic-classification:generic:level1:label'
-          'Descripción de Concepto': 'economic-classification:generic:level2:label'
-          'Descripción de Fuente de Financiamiento': 'fin-source:generic:label'
-          'Descripción de Función': 'functional-classification:generic:level2:label'
-          'Descripción de Grupo Funcional': 'functional-classification:generic:level1:label'
-          'Descripción de Partida Específica': 'economic-classification:generic:level4:label'
-          'Descripción de Partida Genérica': 'economic-classification:generic:level3:label'
-          'Descripción de Programa Presupuestario': 'activity:generic:project:label'
-          'Descripción de Ramo': 'administrative-classification:generic:level1:label'
-          'Descripción de Subfunción': 'functional-classification:generic:level3:label'
-          'Descripción de Tipo de Gasto': 'expenditure-type:label'
-          'Descripción de Unidad Responsable': 'administrative-classification:generic:level2:label'
-          'Descripción de la Actividad Institucional': 'functional-classification:generic:level4:label'
-          'Descripción de la entidad federativa': 'geo-source:target:title'
-          'Descripción de la modalidad del programa presupuestario': 'activity:generic:program:label'
-          'Devengado': 'value'
-          'Ejercicio': 'value'
-          'Ejercido': 'value'
-          'Entidad Federativa': 'geo-source:target:code'
-          'Fuente de Financiamiento': 'fin-source:generic:code'
-          'Función': 'functional-classification:generic:level2:code:full'
-          'Grupo Funcional': 'functional-classification:generic:level1:code:full'
-          'Modalidad del Programa presupuestario': 'activity:generic:program:code'
-          'Modificado': 'value'
-          'Pagado': 'value'
-          'Partida Específica': 'economic-classification:generic:level4:code:full'
-          'Partida Genérica': 'economic-classification:generic:level3:code:full'
-          'Programa Presupuestario': 'activity:generic:project:code'
-          'Ramo': 'administrative-classification:generic:level1:code:full'
-          'Subfunción': 'functional-classification:generic:level3:code:full'
-          'Tipo de Gasto': 'expenditure-type:code'
-          'Unidad Responsable': 'administrative-classification:generic:level2:code:full'
+          'CICLO': 'date:fiscal-year'
+          'DESC_AI': 'functional-classification:generic:level4:label'
+          'DESC_CAPITULO': 'economic-classification:generic:level1:label'
+          'DESC_CONCEPTO': 'economic-classification:generic:level2:label'
+          'DESC_ENT_FED': 'geo-source:target:title'
+          'DESC_FF': 'fin-source:generic:label'
+          'DESC_FUNCION': 'functional-classification:generic:level2:label'
+          'DESC_GPO_FUNCIONAL': 'functional-classification:generic:level1:label'
+          'DESC_MODALIDAD': 'activity:generic:program:label'
+          'DESC_PARTIDA_ESPECIFICA': 'economic-classification:generic:level4:label'
+          'DESC_PARTIDA_GENERICA': 'economic-classification:generic:level3:label'
+          'DESC_PP': 'activity:generic:project:label'
+          'DESC_RAMO': 'administrative-classification:generic:level1:label'
+          'DESC_SUBFUNCION': 'functional-classification:generic:level3:label'
+          'DESC_TIPOGASTO': 'expenditure-type:label'
+          'DESC_UR': 'administrative-classification:generic:level2:label'
+          'ENTIDAD': 'geo-source:target:code'
+          'GPO_FUNCIONAL': 'functional-classification:generic:level1:code:full'
+          'ID_AI': 'functional-classification:generic:level4:code:part'
+          'ID_CAPITULO': 'economic-classification:generic:level1:code:full'
+          'ID_CONCEPTO': 'economic-classification:generic:level2:code:full'
+          'ID_FF': 'fin-source:generic:code'
+          'ID_FUNCION': 'functional-classification:generic:level2:code:part'
+          'ID_MODALIDAD': 'activity:generic:program:code'
+          'ID_PPI': 'budget-line-id'
+          'ID_RAMO': 'administrative-classification:generic:level1:code:full'
+          'ID_SUBFUNCION': 'functional-classification:generic:level3:code:part'
+          'ID_TIPOGASTO': 'expenditure-type:code'
+          'ID_UR': 'administrative-classification:generic:level2:code:full'
+          'MONTO_ADEFAS': 'value'
+          'MONTO_APROBADO': 'value'
+          'MONTO_DEVENGADO': 'value'
+          'MONTO_EJERCICIO': 'value'
+          'MONTO_EJERCIDO': 'value'
+          'MONTO_MODIFICADO': 'value'
+          'MONTO_PAGADO': 'value'
+          'PARTIDA_ESPECIFICA': 'economic-classification:generic:level4:code:full'
+          'PARTIDA_GENERICA': 'economic-classification:generic:level3:code:full'
+          'ID_PP': 'activity:generic:project:code'
+#          'Actividad Institucional': 'functional-classification:generic:level4:code:full'
+#          'MONTO_ADEFAS': 'value'
+#          'MONTO_APROBADO': 'value'
+#          'ID_CAPITULO': 'economic-classification:generic:level1:code:full'
+#          'CICLO': 'date:fiscal-year'
+#          'Clave de cartera': 'budget-line-id'
+#          'ID_CONCEPTO': 'economic-classification:generic:level2:code:full'
+#          'DESC_CAPITULO': 'economic-classification:generic:level1:label'
+#          'DESC_CONCEPTO': 'economic-classification:generic:level2:label'
+#          'Descripción de Fuente de Financiamiento': 'fin-source:generic:label'
+#          'Descripción de Función': 'functional-classification:generic:level2:label'
+#          'Descripción de Grupo Funcional': 'functional-classification:generic:level1:label'
+#          'Descripción de Partida Específica': 'economic-classification:generic:level4:label'
+#          'Descripción de Partida Genérica': 'economic-classification:generic:level3:label'
+#          'Descripción de Programa Presupuestario': 'activity:generic:project:label'
+#          'Descripción de Ramo': 'administrative-classification:generic:level1:label'
+#          'Descripción de Subfunción': 'functional-classification:generic:level3:label'
+#          'Descripción de Tipo de Gasto': 'expenditure-type:label'
+#          'Descripción de Unidad Responsable': 'administrative-classification:generic:level2:label'
+#          'Descripción de la Actividad Institucional': 'functional-classification:generic:level4:label'
+#          'Descripción de la entidad federativa': 'geo-source:target:title'
+#          'Descripción de la modalidad del programa presupuestario': 'activity:generic:program:label'
+#          'Devengado': 'value'
+#          'Ejercicio': 'value'
+#          'Ejercido': 'value'
+#          'Entidad Federativa': 'geo-source:target:code'
+#          'Fuente de Financiamiento': 'fin-source:generic:code'
+#          'Función': 'functional-classification:generic:level2:code:full'
+#          'Grupo Funcional': 'functional-classification:generic:level1:code:full'
+#          'Modalidad del Programa presupuestario': 'activity:generic:program:code'
+#          'MONTO_MODIFICADO': 'value'
+#          'MONTO_PAGADO': 'value'
+#          'PARTIDA_ESPECIFICA': 'economic-classification:generic:level4:code:full'
+#          'PARTIDA_GENERICA': 'economic-classification:generic:level3:code:full'
+#          'ID_PP': 'activity:generic:project:code'
+#          'ID_RAMO': 'administrative-classification:generic:level1:code:full'
+#          'Subfunción': 'functional-classification:generic:level3:code:full'
+#          'Tipo de Gasto': 'expenditure-type:code'
+#          'Unidad Responsable': 'administrative-classification:generic:level2:code:full'
     -
       run: dump
       parameters:
