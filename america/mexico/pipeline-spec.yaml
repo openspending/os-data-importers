@@ -57,7 +57,7 @@ cuenta-publica:
             mediatype: text/csv
           -
 #            url: "http://localhost:5555/PEF2016_AC01.csv"
-            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_2t_2016.csv"
+            url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_avance_2016.csv"
 #            url: "file://data/PEF_AC01_2t_2016.csv"
             encoding: windows-1252
 #            encoding: cp850
