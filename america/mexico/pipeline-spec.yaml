@@ -1,6 +1,6 @@
 cuenta-publica:
   schedule:
-    crontab: '0 0 * * *'
+    crontab: '40 0 * * *'
   pipeline:
     -
       run: simple_remote_source

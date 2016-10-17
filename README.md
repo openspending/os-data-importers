@@ -8,4 +8,8 @@ source, we also gain more credibility to the data stored in the platform.
 
 ## Means
 
-We use the `datapackage-pipelines` framework to 
+We use the `datapackage-pipelines` framework to run the processing pipelines.
+
+## Current Status
+
+#### Mexico 2008-2016 Budget (Cuenta Pública): [![Pipeline](http://staging.openspending.org/pipelines/badge/america/mexico/cuenta-publica)](http://staging.openspending.org/pipelines)
