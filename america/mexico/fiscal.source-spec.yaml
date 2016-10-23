@@ -1,0 +1,307 @@
+title: Mexican Federal Budget 2010-2016
+
+sources:
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2008.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2009.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2010.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2011.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2012.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2013_ra_ecd.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2014_ra_ecd.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2015_ra_ecd_epe.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_avance_2016.csv
+
+
+fields:
+# Fiscal year
+- header: CICLO
+  aliases:
+  - Ciclo
+  options: {}
+  osType: date:fiscal-year
+
+# Functional Classification
+- header: GPO_FUNCIONAL
+  aliases:
+  - Grupo Funcional
+  - Finalidad
+  - GF
+  options: {}
+  osType: functional-classification:generic:level1:code:full
+- header: DESC_GPO_FUNCIONAL
+  aliases:
+  - "Descripci\xF3n de Grupo Funcional"
+  - "Descripci\xF3n de Finalidad"
+  - GRUPO_FUN_DESCRIPCION
+  options: {}
+  osType: functional-classification:generic:level1:label
+
+- header: ID_FUNCION
+  aliases:
+  - "Funci\xF3n"
+  - FN
+  options: {}
+  osType: functional-classification:generic:level2:code:part
+- aliases:
+  - "Descripci\xF3n de Funci\xF3n"
+  - FUNCIONL_DESCRIPCION
+  header: DESC_FUNCION
+  options: {}
+  osType: functional-classification:generic:level2:label
+
+- header: ID_SUBFUNCION
+  aliases:
+  - "Subfunci\xF3n"
+  - SF
+  options: {}
+  osType: functional-classification:generic:level3:code:part
+- header: DESC_SUBFUNCION
+  aliases:
+  - "Descripci\xF3n de Subfunci\xF3n"
+  - SUBFUNCIONL_DESCRIPCION
+  - "Descripci\xF3n de subfunci\xF3n"
+  options: {}
+  osType: functional-classification:generic:level3:label
+
+- header: ID_AI
+  aliases:
+  - Actividad Institucional
+  - AI
+  options: {}
+  osType: functional-classification:generic:level4:code:part
+- header: DESC_AI
+  aliases:
+  - "Descripci\xF3n de la Actividad Institucional"
+  - ACTIVIDAD_INST_DESCRIPCION
+  - "Descripci\xF3n de Actividad Institucional"
+  options: {}
+  osType: functional-classification:generic:level4:label
+
+# Economic Classification
+- header: ID_CAPITULO
+  aliases:
+  - Capitulo
+  options: {}
+  osType: economic-classification:generic:level1:code:full
+- header: DESC_CAPITULO
+  aliases:
+  - "Descripci\xF3n de Capitulo"
+  options: {}
+  osType: economic-classification:generic:level1:label
+
+- header: ID_CONCEPTO
+  aliases:
+  - Objeto del Gasto
+  - Concepto
+  options: {}
+  osType: economic-classification:generic:level2:code:part
+- header: DESC_CONCEPTO
+  aliases:
+  - "Descripci\xF3n de Concepto"
+  - "Descripci\xF3n de Objeto del Gasto"
+  - CONCEPTO_DESCRIPCION
+  options: {}
+  osType: economic-classification:generic:level2:label
+
+- header: PARTIDA_GENERICA
+  aliases:
+  - "Partida Gen\xE9rica"
+  options: {}
+  osType: economic-classification:generic:level3:code:part
+- header: DESC_PARTIDA_GENERICA
+  aliases:
+  - "Descripci\xF3n de Partida Gen\xE9rica"
+  options: {}
+  osType: economic-classification:generic:level3:label
+
+- header: PARTIDA_ESPECIFICA
+  aliases:
+  - "Partida Espec\xEDfica"
+  options: {}
+  osType: economic-classification:generic:level4:code:part
+- header: DESC_PARTIDA_ESPECIFICA
+  aliases:
+  - "Descripci\xF3n de Partida Espec\xEDfica"
+  - "Descripcion de Partida Espec\xEDfica"
+  options: {}
+  osType: economic-classification:generic:level4:label
+
+# Geo
+- header: ENTIDAD
+  aliases:
+  - Entidad Federativa
+  - EF
+  options: {}
+  osType: geo-source:target:code
+- header: DESC_ENT_FED
+  aliases:
+  - "Descripci\xF3n de Entidad Federativa"
+  - "Descripci\xF3n de la entidad federativa"
+  - ENTIDAD_FED_DESCRIPCION
+  options: {}
+  osType: geo-source:target:title
+
+# Financial Source
+- header: ID_FF
+  aliases:
+  - Fuente de Financiamiento
+  - FF
+  - Fuente de Finaciamiento
+  options: {}
+  osType: fin-source:generic:code
+- aliases:
+  - "Descripci\xF3n de Fuente de Financiamiento"
+  - FUENTE_FINAN_DESCRIPCION
+  header: DESC_FF
+  options: {}
+  osType: fin-source:generic:label
+
+# Activity
+- header: ID_MODALIDAD
+  aliases:
+  - Modalidad del Programa presupuestario
+  - MOD
+  - Identificador de Programa Presupuestario
+  - Identificador del Programa Presupuestario
+  options: {}
+  osType: activity:generic:program:code
+- header: DESC_MODALIDAD
+  aliases:
+  - "Descripci\xF3n de la modalidad del programa presupuestario"
+  - MODALIDAD_DESCRIPCION
+  - "Descripci\xF3n del Identificador del Programa Presupuestario"
+  - "Descripci\xF3n del Identificador de Programa Presupuestario"
+  options: {}
+  osType: activity:generic:program:label
+
+- header: ID_PP
+  aliases:
+  - PP
+  - Programa Presupuestario
+  options: {}
+  osType: activity:generic:project:code:part
+- header: DESC_PP
+  aliases:
+  - "Descripci\xF3n de Programa Presupuestario"
+  - PROGR_PRES_DESCRIPCION
+  options: {}
+  osType: activity:generic:project:label
+
+# Administrative Classification
+- header: ID_RAMO
+  aliases:
+  - Ramo
+  - RAMO
+  options: {}
+  osType: administrative-classification:generic:level1:code:full
+- header: DESC_RAMO
+  aliases:
+  - "Descripci\xF3n de Ramo"
+  - RAMO_DESCRIPCION
+  options: {}
+  osType: administrative-classification:generic:level1:label
+
+- header: ID_UR
+  aliases:
+  - Unidad Responsable
+  - UNIDAD
+  options: {}
+  osType: administrative-classification:generic:level2:code:part
+- header: DESC_UR
+  aliases:
+  - "Descripci\xF3n de Unidad Responsable"
+  - UNIDAD_DESCRIPCION
+  options: {}
+  osType: administrative-classification:generic:level2:label
+
+# Expenditure Type
+- header: ID_TIPOGASTO
+  aliases:
+  - TG
+  - Tipo de Gasto
+  options: {}
+  osType: expenditure-type:code
+- header: DESC_TIPOGASTO
+  aliases:
+  - "Descripci\xF3n de Tipo de Gasto"
+  - TIPO_GASTO_DESCRIPCION
+  options: {}
+  osType: expenditure-type:label
+
+# Budget Line Id
+- aliases:
+  - Clave de cartera
+  - CLAVE_CARTERA
+  header: ID_PPI
+  options: {}
+  osType: budget-line-id
+
+# Measures
+- aliases:
+  - Adefas
+  - ADEFAS
+  header: MONTO_ADEFAS
+  options:
+    currency: MXN
+  osType: value
+- aliases:
+  - Aprobado
+  - PEF_2016
+  - "Importe Presupuesto de Egresos de la Federaci\xF3n"
+  - "Importe Presupuesto de Egresos de la Federaci\xF3n (PEF)"
+  header: MONTO_APROBADO
+  options:
+    currency: MXN
+  osType: value
+- aliases:
+  - Devengado
+  header: MONTO_DEVENGADO
+  options:
+    currency: MXN
+  osType: value
+- aliases:
+  - Ejercicio
+  header: MONTO_EJERCICIO
+  options:
+    currency: MXN
+  osType: value
+- aliases:
+  - Ejercido
+  header: MONTO_EJERCIDO
+  options:
+    currency: MXN
+  osType: value
+- aliases:
+  - Modificado
+  header: MONTO_MODIFICADO
+  options:
+    currency: MXN
+  osType: value
+- aliases:
+  - Pagado
+  header: MONTO_PAGADO
+  options:
+    currency: MXN
+  osType: value
+
+postprocessing:
+- processor: clean-dashes
+  parameters:
+    columns:
+    - MONTO_EJERCIDO
+    - MONTO_DEVENGADO
+    - MONTO_APROBADO
+    - MONTO_PAGADO
+    - MONTO_MODIFICADO
+    - MONTO_ADEFAS
+    - MONTO_EJERCICIO
+- processor: objeto-del-gasto
