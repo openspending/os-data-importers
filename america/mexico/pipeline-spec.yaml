@@ -148,8 +148,8 @@ cuenta-publica:
       validate: true
       parameters:
         metadata:
-          name: "mexico-federal-budget"
-          title: "Mexican Federal Budget 2010-2016"
+          name: "presupuesto_2008_2016"
+          title: "Mexican Federal Budget 2008-2016"
           regionCode: na
           countryCode: MX
           fiscalPeriod:
