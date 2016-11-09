@@ -1,4 +1,4 @@
-title: Mexican Federal Budget 2010-2016
+title: Presupuesto México 2008-2016 
 
 sources:
 - encoding: windows-1252
@@ -112,7 +112,7 @@ fields:
   options: {}
   osType: economic-classification:generic:level2:label
 
-- header: PARTIDA_GENERICA
+- header: ID_PARTIDA_GENERICA
   aliases:
   - "Partida Gen\xE9rica"
   options: {}
@@ -123,7 +123,7 @@ fields:
   options: {}
   osType: economic-classification:generic:level3:label
 
-- header: PARTIDA_ESPECIFICA
+- header: ID_PARTIDA_ESPECIFICA
   aliases:
   - "Partida Espec\xEDfica"
   options: {}
@@ -136,13 +136,13 @@ fields:
   osType: economic-classification:generic:level4:label
 
 # Geo
-- header: ENTIDAD
+- header: ID_ENTIDAD_FEDERATIVA
   aliases:
   - Entidad Federativa
   - EF
   options: {}
   osType: geo-source:target:code
-- header: DESC_ENT_FED
+- header: ENTIDAD_FEDERATIVA
   aliases:
   - "Descripci\xF3n de Entidad Federativa"
   - "Descripci\xF3n de la entidad federativa"
@@ -241,7 +241,7 @@ fields:
 - aliases:
   - Clave de cartera
   - CLAVE_CARTERA
-  header: ID_PPI
+  header: ID_CLAVE_CARTERA
   options: {}
   osType: budget-line-id
 
