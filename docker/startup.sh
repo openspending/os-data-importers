@@ -32,5 +32,6 @@ pip3 install -r requirements.txt
 python3 -m common.bootstrap update
 cd ..
 dpp
+#dpp run dirty
 python3 -m celery -b amqp://guest:guest@mq:5672// --concurrency=4 -B -A datapackage_pipelines.app -Q datapackage-pipelines -l INFO worker &
 dpp serve
