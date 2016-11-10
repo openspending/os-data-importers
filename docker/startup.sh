@@ -20,6 +20,7 @@ else
 fi
 
 npm install -g os-types
+ls -la /usr/lib/node_modules
 rm celerybeat-schedule || ls -la
 pwd
 pip3 install -U git+git://github.com/frictionlessdata/datapackage-pipelines.git
