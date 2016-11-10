@@ -114,9 +114,11 @@ fields:
 
 - header: ID_PARTIDA_GENERICA
   aliases:
+  - PARTIDA_GENERICA
   - "Partida Gen\xE9rica"
   options: {}
   osType: economic-classification:generic:level3:code:part
+
 - header: DESC_PARTIDA_GENERICA
   aliases:
   - "Descripci\xF3n de Partida Gen\xE9rica"
@@ -125,6 +127,7 @@ fields:
 
 - header: ID_PARTIDA_ESPECIFICA
   aliases:
+  - PARTIDA_ESPECIFICA
   - "Partida Espec\xEDfica"
   options: {}
   osType: economic-classification:generic:level4:code:part
@@ -138,12 +141,14 @@ fields:
 # Geo
 - header: ID_ENTIDAD_FEDERATIVA
   aliases:
+  - ENTIDAD
   - Entidad Federativa
   - EF
   options: {}
   osType: geo-source:target:code
 - header: ENTIDAD_FEDERATIVA
   aliases:
+  - DESC_ENT_FED
   - "Descripci\xF3n de Entidad Federativa"
   - "Descripci\xF3n de la entidad federativa"
   - ENTIDAD_FED_DESCRIPCION
@@ -238,57 +243,58 @@ fields:
   osType: expenditure-type:label
 
 # Budget Line Id
-- aliases:
+- header: ID_CLAVE_CARTERA
+  aliases:
+  - ID_PPI
   - Clave de cartera
   - CLAVE_CARTERA
-  header: ID_CLAVE_CARTERA
   options: {}
   osType: budget-line-id
 
 # Measures
-- aliases:
+- header: MONTO_ADEFAS
+  aliases:
   - Adefas
   - ADEFAS
-  header: MONTO_ADEFAS
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_APROBADO
+  aliases:
   - Aprobado
   - PEF_2016
   - "Importe Presupuesto de Egresos de la Federaci\xF3n"
   - "Importe Presupuesto de Egresos de la Federaci\xF3n (PEF)"
-  header: MONTO_APROBADO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_DEVENGADO
+  aliases:
   - Devengado
-  header: MONTO_DEVENGADO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_EJERCICIO
+  aliases:
   - Ejercicio
-  header: MONTO_EJERCICIO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_EJERCIDO
+  aliases:
   - Ejercido
-  header: MONTO_EJERCIDO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_MODIFICADO
+  aliases:
   - Modificado
-  header: MONTO_MODIFICADO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_PAGADO
+  aliases:
   - Pagado
-  header: MONTO_PAGADO
   options:
     currency: MXN
   osType: value
