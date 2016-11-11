@@ -90,11 +90,13 @@ fields:
 - header: ID_CAPITULO
   aliases:
   - Capitulo
+  - "Capítulo"
   options: {}
   osType: economic-classification:generic:level1:code:full
 - header: DESC_CAPITULO
   aliases:
   - "Descripci\xF3n de Capitulo"
+  - "Descripción de Capítulo"
   options: {}
   osType: economic-classification:generic:level1:label
 
