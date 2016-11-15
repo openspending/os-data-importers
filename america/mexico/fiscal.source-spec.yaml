@@ -1,4 +1,4 @@
-title: Presupuesto México 2008-2016 
+title: Presupuesto México: 2008-2016 
 
 sources:
 - encoding: windows-1252
@@ -105,7 +105,7 @@ fields:
   - Objeto del Gasto
   - Concepto
   options: {}
-  osType: economic-classification:generic:level2:code:part
+  osType: economic-classification:generic:level2:code:full
 - header: DESC_CONCEPTO
   aliases:
   - "Descripci\xF3n de Concepto"
@@ -119,7 +119,7 @@ fields:
   - PARTIDA_GENERICA
   - "Partida Gen\xE9rica"
   options: {}
-  osType: economic-classification:generic:level3:code:part
+  osType: economic-classification:generic:level3:code:full
 
 - header: DESC_PARTIDA_GENERICA
   aliases:
@@ -132,7 +132,7 @@ fields:
   - PARTIDA_ESPECIFICA
   - "Partida Espec\xEDfica"
   options: {}
-  osType: economic-classification:generic:level4:code:part
+  osType: economic-classification:generic:level4:code:full
 - header: DESC_PARTIDA_ESPECIFICA
   aliases:
   - "Descripci\xF3n de Partida Espec\xEDfica"
@@ -195,7 +195,7 @@ fields:
   - PP
   - Programa Presupuestario
   options: {}
-  osType: activity:generic:project:code:part
+  osType: activity:generic:project:code:full
 - header: DESC_PP
   aliases:
   - "Descripci\xF3n de Programa Presupuestario"
@@ -222,7 +222,7 @@ fields:
   - Unidad Responsable
   - UNIDAD
   options: {}
-  osType: administrative-classification:generic:level2:code:part
+  osType: administrative-classification:generic:level2:code:full
 - header: DESC_UR
   aliases:
   - "Descripci\xF3n de Unidad Responsable"
