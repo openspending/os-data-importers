@@ -36,7 +36,7 @@ fields:
   - Finalidad
   - GF
   options: {}
-  osType: functional-classification:generic:level1:code:full
+  osType: functional-classification:generic:level1:code
 - header: DESC_GPO_FUNCIONAL
   aliases:
   - "Descripci\xF3n de Grupo Funcional"
@@ -92,7 +92,7 @@ fields:
   - Capitulo
   - "Capítulo"
   options: {}
-  osType: economic-classification:generic:level1:code:full
+  osType: economic-classification:generic:level1:code
 - header: DESC_CAPITULO
   aliases:
   - "Descripci\xF3n de Capitulo"
@@ -209,7 +209,7 @@ fields:
   - Ramo
   - RAMO
   options: {}
-  osType: administrative-classification:generic:level1:code:full
+  osType: administrative-classification:generic:level1:code
 - header: DESC_RAMO
   aliases:
   - "Descripci\xF3n de Ramo"
