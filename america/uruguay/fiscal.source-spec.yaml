@@ -1,0 +1,97 @@
+title: "BOOST Uruguay"
+
+sources:
+- url: http://wbi.worldbank.org/boost/Data/boost/boostcms/files/field/country-attachments/boost_uruguay_v0.6_2011-2016_spanish.xlsx
+  sheet: 2
+
+fields:
+
+
+
+# Fiscal year
+- header: YEAR
+  options: {}
+  osType: date:fiscal-year
+
+
+
+# Administrative Classification
+- header: ADMIN1
+  options: {}
+  osType: administrative-classification:generic:level1:code
+
+- header: ADMIN2
+  options: {}
+  osType: administrative-classification:generic:level2:code:full
+
+
+
+# Functional Classification
+- header: FUNC1
+  options: {}
+  osType: functional-classification:generic:level1:code
+
+- header: FUNC2
+  options: {}
+  osType: functional-classification:generic:level2:code:full
+
+
+
+# Activity
+- header: PROGRAM1
+  options: {}
+  osType: activity:generic:program:code
+
+- header: PROYECTO
+  options: {}
+  osType: activity:generic:project:code:full
+
+
+# Financial Source
+- header: SOURCE_FIN1
+  options: {}
+  osType: fin-source:generic:level1:code
+
+- header: SOURCE_FIN2
+  options: {}
+  osType: fin-source:generic:level2:code:full
+
+
+
+# Economic Classification
+- header: ECON1
+  options: {}
+  osType: economic-classification:generic:level1:code
+
+- header: ECON2
+  options: {}
+  osType: economic-classification:generic:level2:code:full
+
+- header: ECON3
+  options: {}
+  osType: economic-classification:generic:level3:code:full
+
+
+
+# Other
+- header: EXP_TYPE
+  options: {}
+  osType: geo-expenditure-type:code
+
+
+
+# Measures
+- header: APPROVED
+  options:
+    currency: UYU
+  osType: value
+- header: MODIFIED
+  options:
+    currency: UYU
+  osType: value
+- header: EXECUTED
+  options:
+    currency: UYU
+  osType: value
+
+#postprocessing:
