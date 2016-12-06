@@ -7,7 +7,6 @@ sources:
 fields:
 
 
-
 # Fiscal year
 - header: YEAR
   options: {}
@@ -78,19 +77,26 @@ fields:
   options: {}
   osType: expenditure-type:code
 
+- header: PHASE_ID
+  options: {}
+  osType: phase:id
+
 - header: PHASE
   options: {}
-  osType: phase
+  osType: phase:label
 
 
 measures:
   currency: UYU
   mapping:
     APPROVED:
+      PHASE_ID: "0"
       PHASE: APPROVED
     MODIFIED:
+      PHASE_ID: "1"
       PHASE: MODIFIED
     EXECUTED:
+      PHASE_ID: "2"
       PHASE: EXECUTED
 
 #postprocessing:

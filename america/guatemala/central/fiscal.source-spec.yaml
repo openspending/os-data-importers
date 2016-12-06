@@ -111,21 +111,29 @@ fields:
 
 
 # Measures
+- header: PHASE_ID
+  osType: phase:id
+
 - header: PHASE
-  osType: phase
+  osType: phase:label
 
 measures:
   currency: GTQ
   mapping:
     APPROVED:
+      PHASE_ID: "0"
       PHASE: APPROVED
     RELEASED:
+      PHASE_ID: "1"
       PHASE: RELEASED
     COMMITTED:
+      PHASE_ID: "2"
       PHASE: COMMITTED
     ACCRUED:
+      PHASE_ID: "3"
       PHASE: ACCRUED
     PAID:
+      PHASE_ID: "4"
       PHASE: PAID
 
 #postprocessing:
