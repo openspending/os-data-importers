@@ -111,26 +111,21 @@ fields:
 
 
 # Measures
-- header: APPROVED
-  options:
-    currency: GTQ
-  osType: value
-- header: RELEASED
-  options:
-    currency: GTQ
-  osType: value
-- header: COMMITTED
-  options:
-    currency: GTQ
-  osType: value
-- header: ACCRUED
-  options:
-    currency: GTQ
-  osType: value
-  osType: value
-- header: PAID
-  options:
-    currency: GTQ
-  osType: value
+- header: PHASE
+  osType: phase
+
+measures:
+  currency: GTQ
+  mapping:
+    APPROVED:
+      PHASE: APPROVED
+    RELEASED:
+      PHASE: RELEASED
+    COMMITTED:
+      PHASE: COMMITTED
+    ACCRUED:
+      PHASE: ACCRUED
+    PAID:
+      PHASE: PAID
 
 #postprocessing:

@@ -76,22 +76,21 @@ fields:
 # Other
 - header: EXP_TYPE
   options: {}
-  osType: geo-expenditure-type:code
+  osType: expenditure-type:code
+
+- header: PHASE
+  options: {}
+  osType: phase
 
 
-
-# Measures
-- header: APPROVED
-  options:
-    currency: UYU
-  osType: value
-- header: MODIFIED
-  options:
-    currency: UYU
-  osType: value
-- header: EXECUTED
-  options:
-    currency: UYU
-  osType: value
+measures:
+  currency: UYU
+  mapping:
+    APPROVED:
+      PHASE: APPROVED
+    MODIFIED:
+      PHASE: MODIFIED
+    EXECUTED:
+      PHASE: EXECUTED
 
 #postprocessing:
