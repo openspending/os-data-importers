@@ -98,5 +98,8 @@ measures:
     EXECUTED:
       PHASE_ID: "2"
       PHASE: EXECUTED
+  currency-conversion: {}
+
+
 
 #postprocessing:

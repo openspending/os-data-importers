@@ -135,5 +135,6 @@ measures:
     PAID:
       PHASE_ID: "4"
       PHASE: PAID
+  currency-conversion: {}
 
 #postprocessing:
