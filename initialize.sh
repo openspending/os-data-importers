@@ -7,12 +7,12 @@ rm celerybeat-schedule || ls -la
 pwd
 pip3 install -U git+git://github.com/frictionlessdata/datapackage-pipelines.git
 pip3 install -U git+git://github.com/openspending/datapackage-pipelines-fiscal.git
-pip3 install -U git+git://github.com/akariv/tabulator-py.git@feature/fake-user-agent
+pip3 install -U git+git://github.com/frictionlessdata/tabulator-py.git
 cd eu-structural-funds
 export PYTHONPATH=$PYTHONPATH:`pwd`
 export DATAPIPELINES_PROCESSOR_PATH=`pwd`/common/processors
 pip3 install -r requirements.txt
-python3 -m common.bootstrap update
+python3 -m common.generate
 cd ..
 dpp init
 dpp
