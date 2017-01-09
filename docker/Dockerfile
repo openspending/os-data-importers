@@ -10,7 +10,7 @@ RUN cd $(npm root -g)/npm \
  && npm install fs-extra \
  && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js
 RUN npm install -g npm@latest
-RUN npm install -g lodash-addons lodash underscore os-types d3-time-format
+RUN npm install -g lodash-addons lodash underscore os-types d3-time-format moment bluebird
 RUN python3 --version
 RUN pip3 --version
 RUN pip3 install --upgrade pip

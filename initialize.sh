@@ -1,7 +1,9 @@
 #!/bin/sh
 set -e
 
-npm install -g os-types moment underscore lodash lodash-addons
+npm install -g moment underscore lodash lodash-addons bluebird
+npm install -g os-types
+
 ls -la /usr/lib/node_modules
 rm celerybeat-schedule || ls -la
 pwd
