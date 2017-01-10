@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-npm install -g moment underscore lodash lodash-addons bluebird
+npm install -g moment underscore lodash lodash-addons bluebird superagent
 npm install -g os-types
 
 ls -la /usr/lib/node_modules
