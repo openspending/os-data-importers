@@ -10,8 +10,8 @@ columns = params.get('columns')
 
 
 new_columns = [
-    'PARTIDA_GENERICA',
-    'PARTIDA_ESPECIFICA',
+    'ID_PARTIDA_GENERICA',
+    'ID_PARTIDA_ESPECIFICA',
     'DESC_PARTIDA_ESPECIFICA',
     'DESC_PARTIDA_GENERICA',
     'ID_CAPITULO',
@@ -56,14 +56,14 @@ def process_row(row):
         nb_generica_digits = 4 if year in (2008, 2009, 2010) else 3
 
     if objeto and len(objeto)>=4:
-        row['PARTIDA_GENERICA'] = objeto[:nb_generica_digits]
+        row['ID_PARTIDA_GENERICA'] = objeto[:nb_generica_digits]
 
-    row['DESC_PARTIDA_GENERICA'] = lookup(row.get('PARTIDA_GENERICA'), 'partida_generica', year)
+    row['DESC_PARTIDA_GENERICA'] = lookup(row.get('ID_PARTIDA_GENERICA'), 'partida_generica', year)
 
     if year not in (2008, 2009, 2010):
         if objeto and len(objeto) >= 5:
-            row['PARTIDA_ESPECIFICA'] = objeto
-            row['DESC_PARTIDA_ESPECIFICA'] = lookup(row.get('PARTIDA_ESPECIFICA'), 'partida_específica', year)
+            row['ID_PARTIDA_ESPECIFICA'] = objeto
+            row['DESC_PARTIDA_ESPECIFICA'] = lookup(row.get('ID_PARTIDA_ESPECIFICA'), 'partida_específica', year)
 
     return row
 
