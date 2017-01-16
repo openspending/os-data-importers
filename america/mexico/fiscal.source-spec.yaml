@@ -75,7 +75,6 @@ fields:
   aliases:
   - "Descripci\xF3n de Subfunci\xF3n"
   - SUBFUNCIONL_DESCRIPCION
-  - "Descripci\xF3n de subfunci\xF3n"
   options: {}
   osType: functional-classification:generic:level3:label
 
@@ -129,7 +128,6 @@ fields:
   aliases:
   - PARTIDA_GENERICA
   - "Partida Gen\xE9rica"
-  - PARTIDA_GENERICA
   options: {}
   osType: economic-classification:generic:level3:code:full
 
@@ -144,7 +142,6 @@ fields:
   aliases:
   - PARTIDA_ESPECIFICA
   - "Partida Espec\xEDfica"
-  - PARTIDA_ESPECIFICA
   options: {}
   osType: economic-classification:generic:level4:code:full
 - header: DESC_PARTIDA_ESPECIFICA
@@ -161,7 +158,6 @@ fields:
   - ENTIDAD
   - Entidad Federativa
   - EF
-  - ENTIDAD
   options: {}
   osType: geo-source:target:code
 - header: ENTIDAD_FEDERATIVA
@@ -170,7 +166,6 @@ fields:
   - "Descripci\xF3n de Entidad Federativa"
   - "Descripci\xF3n de la entidad federativa"
   - ENTIDAD_FED_DESCRIPCION
-  - DESC_ENT_FED
   options: {}
   osType: geo-source:target:title
 
@@ -203,9 +198,9 @@ fields:
 - header: DESC_MODALIDAD
   aliases:
   - "Descripci\xF3n de la modalidad del programa presupuestario"
-  - MODALIDAD_DESCRIPCION
-  - "Descripci\xF3n del Identificador del Programa Presupuestario"
   - "Descripci\xF3n del Identificador de Programa Presupuestario"
+  - "Descripci\xF3n del Identificador del Programa Presupuestario"
+  - MODALIDAD_DESCRIPCION
   options: {}
   osType: activity:generic:program:label
 
