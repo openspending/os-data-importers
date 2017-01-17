@@ -27,6 +27,7 @@ sources:
 fields:
 # Fiscal year
 - header: CICLO
+  title: Ciclo
   aliases:
   - Ciclo
   options: {}
@@ -34,6 +35,7 @@ fields:
 
 # Functional Classification
 - header: GPO_FUNCIONAL
+  title: Grupo Funcional
   aliases:
   - Grupo Funcional
   - Finalidad
@@ -49,6 +51,7 @@ fields:
   osType: functional-classification:generic:level1:label
 
 - header: ID_FUNCION
+  title: Función 
   aliases:
   - "Funci\xF3n"
   - FN
@@ -62,6 +65,7 @@ fields:
   osType: functional-classification:generic:level2:label
 
 - header: ID_SUBFUNCION
+  title: Subfunción
   aliases:
   - "Subfunci\xF3n"
   - SF
@@ -75,6 +79,7 @@ fields:
   osType: functional-classification:generic:level3:label
 
 - header: ID_AI
+  title: Actividad Institucional
   aliases:
   - Actividad Institucional
   - AI
@@ -90,6 +95,7 @@ fields:
 
 # Economic Classification
 - header: ID_CAPITULO
+  title: Capítulo
   aliases:
   - Capitulo
   - "Capítulo"
@@ -103,6 +109,7 @@ fields:
   osType: economic-classification:generic:level1:label
 
 - header: ID_CONCEPTO
+  title: Concepto
   aliases:
   - Objeto del Gasto
   - Concepto
@@ -161,6 +168,7 @@ fields:
 
 # Financial Source
 - header: ID_FF
+  title: Fuente de Financiamiento
   aliases:
   - Fuente de Financiamiento
   - FF
@@ -176,6 +184,7 @@ fields:
 
 # Activity
 - header: ID_MODALIDAD
+  title: Modalidad
   aliases:
   - Modalidad del Programa presupuestario
   - MOD
@@ -193,6 +202,7 @@ fields:
   osType: activity:generic:program:label
 
 - header: ID_PP
+  title: Programa Presupuestario
   aliases:
   - PP
   - Programa Presupuestario
@@ -207,6 +217,7 @@ fields:
 
 # Administrative Classification
 - header: ID_RAMO
+  title: Ramo
   aliases:
   - Ramo
   - RAMO
@@ -220,6 +231,7 @@ fields:
   osType: administrative-classification:generic:level1:label
 
 - header: ID_UR
+  title: Unidad Responsable
   aliases:
   - Unidad Responsable
   - UNIDAD
@@ -234,6 +246,7 @@ fields:
 
 # Expenditure Type
 - header: ID_TIPOGASTO
+  title: Tipo de Gasto
   aliases:
   - TG
   - Tipo de Gasto

@@ -8,59 +8,40 @@ cuenta-publica:
         resources:
 
           -
-#            url: "http://localhost:5555/Cuenta_Publica_2010.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2008.csv"
-#            url: "file://data/Cuenta_Publica_2008.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
-#            url: "http://localhost:5555/Cuenta_Publica_2010.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2009.csv"
-#            url: "file://data/Cuenta_Publica_2009.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
-#            url: "http://localhost:5555/Cuenta_Publica_2010.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2010.csv"
-#            url: "file://data/Cuenta_Publica_2010.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
-#            url: "http://localhost:5555/Cuenta_Publica_2011.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2011.csv"
-#            url: "file://data/Cuenta_Publica_2011.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
-#            url: "http://localhost:5555/Cuenta_Publica_2012.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2012.csv"
-#            url: "file://data/Cuenta_Publica_2012.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
-#            url: "http://localhost:5555/Cuenta_Publica_2013_RA.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2013_ra_ecd.csv"
-#            url: "file://data/CP_2013.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
-#            url: "http://localhost:5555/Cuenta_Publica_2014_RA.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2014_ra_ecd.csv"
-#            url: "file://data/CP_2014.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
-#            url: "http://localhost:5555/Cuenta_Publica_2015_GF.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2015_ra_ecd_epe.csv"
-#            url: "file://data/CP_2015.csv"
             encoding: windows-1252
             mediatype: text/csv
           -
-#            url: "http://localhost:5555/PEF2016_AC01.csv"
             url: "http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_avance_2016.csv"
-#            url: "file://data/PEF_AC01_2t_2016.csv"
             encoding: windows-1252
-#            encoding: cp850
             mediatype: text/csv
     -
       run: downloader
@@ -178,13 +159,13 @@ cuenta-publica:
           'DESC_MODALIDAD': 'activity:generic:program:label'
           'ID_PP': 'activity:generic:project:code:part'
           'DESC_PP': 'activity:generic:project:label'
-          'ID_RAMO': 'administrative-classification:generic:level1:code:full'
+          'ID_RAMO': 'administrative-classification:generic:level1:code'
           'DESC_RAMO': 'administrative-classification:generic:level1:label'
           'ID_UR': 'administrative-classification:generic:level2:code:part'
           'DESC_UR': 'administrative-classification:generic:level2:label'
           'ID_PPI': 'budget-line-id'
           'CICLO': 'date:fiscal-year'
-          'ID_CAPITULO': 'economic-classification:generic:level1:code:full'
+          'ID_CAPITULO': 'economic-classification:generic:level1:code'
           'DESC_CAPITULO': 'economic-classification:generic:level1:label'
           'ID_CONCEPTO': 'economic-classification:generic:level2:code:part'
           'DESC_CONCEPTO': 'economic-classification:generic:level2:label'
@@ -196,7 +177,7 @@ cuenta-publica:
           'DESC_TIPOGASTO': 'expenditure-type:label'
           'ID_FF': 'fin-source:generic:code'
           'DESC_FF': 'fin-source:generic:label'
-          'GPO_FUNCIONAL': 'functional-classification:generic:level1:code:full'
+          'GPO_FUNCIONAL': 'functional-classification:generic:level1:code'
           'DESC_GPO_FUNCIONAL': 'functional-classification:generic:level1:label'
           'ID_FUNCION': 'functional-classification:generic:level2:code:part'
           'DESC_FUNCION': 'functional-classification:generic:level2:label'

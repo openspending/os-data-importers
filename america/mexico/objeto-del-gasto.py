@@ -14,15 +14,17 @@ new_columns = [
     'ID_PARTIDA_ESPECIFICA',
     'DESC_PARTIDA_ESPECIFICA',
     'DESC_PARTIDA_GENERICA',
-    'ID_CAPITULO',
     'DESC_CAPITULO',
 ]
 
+field_names = [f['name'] for f in datapackage['resources'][0]['schema']['fields']]
+
 for column in new_columns:
-    datapackage['resources'][0]['schema']['fields'].append({
-        'name': column,
-        'type': 'string'
-    })
+    if column not in field_names:
+        datapackage['resources'][0]['schema']['fields'].append({
+            'name': column,
+            'type': 'string'
+        })
 
 
 lookup_map = {}
@@ -36,7 +38,7 @@ for kind in ['partida_específica',  'partida_generica',
 
 
 def lookup(key, catalog, year):
-    return lookup_map[catalog].get(key)
+    return lookup_map[catalog].get(key.strip())
 
 
 def process_row(row):

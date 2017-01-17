@@ -1,0 +1,159 @@
+title: "Croatia Budget Plan"
+
+sources:
+- url: http://datastore.openspending.org/source-files/Croatia-BudgetForecast-2016.xlsx
+  sheet: 2
+  headers:
+    - admin1_code
+    - admin1_label
+    - admin2_code
+    - admin2_label
+    - activity1_code
+    - activity1_label
+    - activity2_code
+    - activity2_label
+    - activity3_code
+    - activity3_label
+    - func1_code
+    - func1_label
+    - fin_source_code
+    - fin_source_label
+    - econ1_code
+    - econ1_label
+    - econ2_code
+    - econ2_label
+    - econ3_code
+    - econ3_label
+    - plan_2016
+    - plan_2017
+    - plan_2018
+  skip_rows: 2
+
+
+fields:
+
+
+# Fiscal year
+- header: Year
+  options: {}
+  osType: date:fiscal-year
+
+
+
+# Administrative Classification
+- header: admin1_code
+  title: "Razdjel (O1) - Tekući proračun"
+  options: {}
+  osType: administrative-classification:generic:level1:code
+
+- header: admin1_label
+  options: {}
+  osType: administrative-classification:generic:level1:label
+
+- header: admin2_code
+  label: "Glava (O2) - Tekući proračun"
+  options: {}
+  osType: administrative-classification:generic:level2:code:full
+
+- header: admin2_label
+  options: {}
+  osType: administrative-classification:generic:level2:label
+
+
+
+# Activity
+- header: activity1_code
+  title: "Nac. prog. (P1)"
+  options: {}
+  osType: activity:generic:program:code
+
+- header: activity1_label
+  options: {}
+  osType: activity:generic:program:label
+
+- header: activity2_code
+  title: "Program (P2)"
+  options: {}
+  osType: activity:generic:subprogram:code:full
+
+- header: activity2_label
+  options: {}
+  osType: activity:generic:subprogram:label
+
+- header: activity3_code
+  title: "Korisnik proračuna"
+  options: {}
+  osType: activity:generic:project:code:full
+
+- header: activity3_label
+  options: {}
+  osType: activity:generic:project:label
+
+
+
+# Functional Classification
+- header: func1_code
+  title: "Funk. podr."
+  options: {}
+  osType: functional-classification:generic:level1:code
+
+- header: func1_label
+  options: {}
+  osType: functional-classification:generic:level1:label
+
+
+# Financial Source
+- header: fin_source_code
+  title: "Izvor financiranja (I2)"
+  options: {}
+  osType: fin-source:generic:level1:code
+
+- header: fin_source_label
+  options: {}
+  osType: fin-source:generic:level1:label
+
+
+
+# Economic Classification
+- header: econ1_code
+  title: "Razred stavke (E1)"
+  options: {}
+  osType: economic-classification:generic:level1:code
+
+- header: econ1_label
+  options: {}
+  osType: economic-classification:generic:level1:label
+
+- header: econ2_code
+  title: "Skupina stavke (E2)"
+  options: {}
+  osType: economic-classification:generic:level2:code:full
+
+- header: econ2_label
+  options: {}
+  osType: economic-classification:generic:level2:label
+
+- header: econ3_code
+  title: "Podskup. stavke (E3)"
+  options: {}
+  osType: economic-classification:generic:level3:code:full
+
+- header: econ3_label
+  options: {}
+  osType: economic-classification:generic:level3:label
+
+
+
+measures:
+  currency: HRK
+  mapping:
+    plan_2016:
+      Year: "2016"
+    plan_2017:
+      Year: "2017"
+    plan_2018:
+      Year: "2018"
+  currency-conversion: {}
+
+
+#postprocessing:

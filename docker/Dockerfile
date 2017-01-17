@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.4
+FROM gliderlabs/alpine:3.5
 
 RUN apk add --update python3 git libpq nodejs
 RUN apk add --update wget libffi libffi-dev ca-certificates python3-dev  \
@@ -9,8 +9,8 @@ RUN wget "https://bootstrap.pypa.io/get-pip.py" -O /dev/stdout | python3
 RUN cd $(npm root -g)/npm \
  && npm install fs-extra \
  && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js
-RUN npm install npm@latest -g
-RUN npm install -g os-types
+RUN npm install -g npm@latest
+RUN npm install -g lodash-addons lodash underscore os-types d3-time-format moment bluebird superagent
 RUN python3 --version
 RUN pip3 --version
 RUN pip3 install --upgrade pip
@@ -30,8 +30,6 @@ ENV CELERY_BROKER="amqp://guest:guest@mq:5672//"
 ENV CELERY_BACKEND="amqp://guest:guest@mq:5672//"
 ENV GIT_REPO=http://github.com/openspending/os-data-importers.git
 
-ADD docker/startup.sh /startup.sh
-
 EXPOSE 5000
 
-CMD /startup.sh
+CMD /app/docker/startup.sh
