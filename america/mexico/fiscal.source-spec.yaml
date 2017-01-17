@@ -337,6 +337,6 @@ postprocessing:
     - MONTO_APROBADO
     - MONTO_PAGADO
     - MONTO_MODIFICADO
-    - MONTO_ADEFAS
     - MONTO_EJERCICIO
+    - MONTO_ADEFAS
 - processor: objeto-del-gasto
