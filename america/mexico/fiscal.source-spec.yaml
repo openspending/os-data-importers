@@ -1,4 +1,6 @@
-title: Mexican Federal Budget 2010-2016
+title: "Presupuesto México: 2008-2017"
+dataset-name: presupuesto_mexico_2008_2017
+resource-name: presupuesto_mexico_2008_2017
 
 sources:
 - encoding: windows-1252
@@ -19,7 +21,8 @@ sources:
   url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2015_ra_ecd_epe.csv
 - encoding: windows-1252
   url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_avance_2016.csv
-
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_2017.csv
 
 fields:
 # Fiscal year
@@ -36,7 +39,7 @@ fields:
   - Finalidad
   - GF
   options: {}
-  osType: functional-classification:generic:level1:code:full
+  osType: functional-classification:generic:level1:code
 - header: DESC_GPO_FUNCIONAL
   aliases:
   - "Descripci\xF3n de Grupo Funcional"
@@ -50,7 +53,7 @@ fields:
   - "Funci\xF3n"
   - FN
   options: {}
-  osType: functional-classification:generic:level2:code:part
+  osType: functional-classification:generic:level2:code:full
 - aliases:
   - "Descripci\xF3n de Funci\xF3n"
   - FUNCIONL_DESCRIPCION
@@ -63,12 +66,11 @@ fields:
   - "Subfunci\xF3n"
   - SF
   options: {}
-  osType: functional-classification:generic:level3:code:part
+  osType: functional-classification:generic:level3:code:full
 - header: DESC_SUBFUNCION
   aliases:
   - "Descripci\xF3n de Subfunci\xF3n"
   - SUBFUNCIONL_DESCRIPCION
-  - "Descripci\xF3n de subfunci\xF3n"
   options: {}
   osType: functional-classification:generic:level3:label
 
@@ -77,7 +79,7 @@ fields:
   - Actividad Institucional
   - AI
   options: {}
-  osType: functional-classification:generic:level4:code:part
+  osType: functional-classification:generic:level4:code:full
 - header: DESC_AI
   aliases:
   - "Descripci\xF3n de la Actividad Institucional"
@@ -90,11 +92,13 @@ fields:
 - header: ID_CAPITULO
   aliases:
   - Capitulo
+  - "Capítulo"
   options: {}
-  osType: economic-classification:generic:level1:code:full
+  osType: economic-classification:generic:level1:code
 - header: DESC_CAPITULO
   aliases:
   - "Descripci\xF3n de Capitulo"
+  - "Descripción de Capítulo"
   options: {}
   osType: economic-classification:generic:level1:label
 
@@ -103,7 +107,7 @@ fields:
   - Objeto del Gasto
   - Concepto
   options: {}
-  osType: economic-classification:generic:level2:code:part
+  osType: economic-classification:generic:level2:code:full
 - header: DESC_CONCEPTO
   aliases:
   - "Descripci\xF3n de Concepto"
@@ -112,22 +116,25 @@ fields:
   options: {}
   osType: economic-classification:generic:level2:label
 
-- header: PARTIDA_GENERICA
+- header: ID_PARTIDA_GENERICA
   aliases:
+  - PARTIDA_GENERICA
   - "Partida Gen\xE9rica"
   options: {}
-  osType: economic-classification:generic:level3:code:part
+  osType: economic-classification:generic:level3:code:full
+
 - header: DESC_PARTIDA_GENERICA
   aliases:
   - "Descripci\xF3n de Partida Gen\xE9rica"
   options: {}
   osType: economic-classification:generic:level3:label
 
-- header: PARTIDA_ESPECIFICA
+- header: ID_PARTIDA_ESPECIFICA
   aliases:
+  - PARTIDA_ESPECIFICA
   - "Partida Espec\xEDfica"
   options: {}
-  osType: economic-classification:generic:level4:code:part
+  osType: economic-classification:generic:level4:code:full
 - header: DESC_PARTIDA_ESPECIFICA
   aliases:
   - "Descripci\xF3n de Partida Espec\xEDfica"
@@ -136,14 +143,16 @@ fields:
   osType: economic-classification:generic:level4:label
 
 # Geo
-- header: ENTIDAD
+- header: ID_ENTIDAD_FEDERATIVA
   aliases:
+  - ENTIDAD
   - Entidad Federativa
   - EF
   options: {}
   osType: geo-source:target:code
-- header: DESC_ENT_FED
+- header: ENTIDAD_FEDERATIVA
   aliases:
+  - DESC_ENT_FED
   - "Descripci\xF3n de Entidad Federativa"
   - "Descripci\xF3n de la entidad federativa"
   - ENTIDAD_FED_DESCRIPCION
@@ -177,9 +186,9 @@ fields:
 - header: DESC_MODALIDAD
   aliases:
   - "Descripci\xF3n de la modalidad del programa presupuestario"
-  - MODALIDAD_DESCRIPCION
-  - "Descripci\xF3n del Identificador del Programa Presupuestario"
   - "Descripci\xF3n del Identificador de Programa Presupuestario"
+  - "Descripci\xF3n del Identificador del Programa Presupuestario"
+  - MODALIDAD_DESCRIPCION
   options: {}
   osType: activity:generic:program:label
 
@@ -188,7 +197,7 @@ fields:
   - PP
   - Programa Presupuestario
   options: {}
-  osType: activity:generic:project:code:part
+  osType: activity:generic:project:code:full
 - header: DESC_PP
   aliases:
   - "Descripci\xF3n de Programa Presupuestario"
@@ -202,7 +211,7 @@ fields:
   - Ramo
   - RAMO
   options: {}
-  osType: administrative-classification:generic:level1:code:full
+  osType: administrative-classification:generic:level1:code
 - header: DESC_RAMO
   aliases:
   - "Descripci\xF3n de Ramo"
@@ -215,7 +224,7 @@ fields:
   - Unidad Responsable
   - UNIDAD
   options: {}
-  osType: administrative-classification:generic:level2:code:part
+  osType: administrative-classification:generic:level2:code:full
 - header: DESC_UR
   aliases:
   - "Descripci\xF3n de Unidad Responsable"
@@ -238,57 +247,59 @@ fields:
   osType: expenditure-type:label
 
 # Budget Line Id
-- aliases:
+- header: ID_CLAVE_CARTERA
+  aliases:
+  - ID_PPI
   - Clave de cartera
   - CLAVE_CARTERA
-  header: ID_PPI
   options: {}
   osType: budget-line-id
 
 # Measures
-- aliases:
+- header: MONTO_ADEFAS
+  aliases:
   - Adefas
   - ADEFAS
-  header: MONTO_ADEFAS
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_APROBADO
+  aliases:
   - Aprobado
   - PEF_2016
   - "Importe Presupuesto de Egresos de la Federaci\xF3n"
   - "Importe Presupuesto de Egresos de la Federaci\xF3n (PEF)"
-  header: MONTO_APROBADO
+  - PEF_BRUTO_2017
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_DEVENGADO
+  aliases:
   - Devengado
-  header: MONTO_DEVENGADO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_EJERCICIO
+  aliases:
   - Ejercicio
-  header: MONTO_EJERCICIO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_EJERCIDO
+  aliases:
   - Ejercido
-  header: MONTO_EJERCIDO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_MODIFICADO
+  aliases:
   - Modificado
-  header: MONTO_MODIFICADO
   options:
     currency: MXN
   osType: value
-- aliases:
+- header: MONTO_PAGADO
+  aliases:
   - Pagado
-  header: MONTO_PAGADO
   options:
     currency: MXN
   osType: value
