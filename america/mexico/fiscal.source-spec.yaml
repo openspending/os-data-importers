@@ -44,9 +44,9 @@ fields:
   osType: functional-classification:generic:level1:code
 - header: DESC_GPO_FUNCIONAL
   aliases:
+  - GRUPO_FUN_DESCRIPCION
   - "Descripci\xF3n de Grupo Funcional"
   - "Descripci\xF3n de Finalidad"
-  - GRUPO_FUN_DESCRIPCION
   options: {}
   osType: functional-classification:generic:level1:label
 
