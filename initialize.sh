@@ -20,4 +20,5 @@ cd ..
 dpp init
 dpp
 python3 -m celery -b amqp://guest:guest@mq:5672// --concurrency=4 -B -A datapackage_pipelines.app -Q datapackage-pipelines -l INFO worker &
+/usr/bin/env os-types "[]" | true
 dpp serve

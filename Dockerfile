@@ -1,19 +1,12 @@
-FROM alpine:3.5
+FROM python:3.5-alpine
 
-RUN apk add --update python3 git libpq nodejs
+RUN apk add --update git libpq nodejs
 RUN apk add --update wget libffi libffi-dev ca-certificates python3-dev  \
 			  g++ build-base libxml2-dev libxslt-dev 
-RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 RUN update-ca-certificates
-RUN wget "https://bootstrap.pypa.io/get-pip.py" -O /dev/stdout | python3
-RUN cd $(npm root -g)/npm \
- && npm install fs-extra \
- && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js
-RUN npm install -g npm@latest
-RUN npm install -g lodash-addons lodash underscore os-types d3-time-format moment bluebird superagent
-RUN python3 --version
-RUN pip3 --version
-RUN pip3 install --upgrade pip
+RUN npm install -g os-types
+RUN npm root -g && npm --version
+RUN ls -la `npm root -g`
 RUN pip3 install os-gobble \
                  celery \
                  cchardet \
