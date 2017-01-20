@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.5
+FROM alpine:3.5
 
 RUN apk add --update python3 git libpq nodejs
 RUN apk add --update wget libffi libffi-dev ca-certificates python3-dev  \
