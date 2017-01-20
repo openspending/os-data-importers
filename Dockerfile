@@ -20,7 +20,7 @@ RUN pip3 install os-gobble \
                  datapackage-pipelines \
                  datapackage-pipelines-fiscal \
                  lxml
-RUN pip3 install numpy==1.11.2 cython==0.25.1 pandas
+#RUN pip3 install numpy==1.11.2 cython==0.25.1 pandas
 RUN git clone http://github.com/openspending/os-data-importers.git /app
 RUN mkdir /root/.gobble
 RUN rm -rf /var/cache/apk/*
