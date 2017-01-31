@@ -9,7 +9,7 @@ rm celerybeat-schedule || ls -la
 pwd
 cd eu-structural-funds
 export PYTHONPATH=$PYTHONPATH:`pwd`
-export DATAPIPELINES_PROCESSOR_PATH=`pwd`/common/processors
+export DPP_PROCESSOR_PATH=`pwd`/common/processors
 pip3 install -r requirements.txt
 pip3 install -U git+git://github.com/openspending/datapackage-pipelines-fiscal.git
 pip3 install -U git+git://github.com/frictionlessdata/datapackage-pipelines.git
