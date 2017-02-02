@@ -1,6 +1,6 @@
 title: "Presupuesto México: 2008-2017"
-dataset-name: presupuesto_mexico_2008_2017
-resource-name: presupuesto_mexico_2008_2017
+dataset-name: presupuesto_mexico_2008_20164t_2017
+resource-name: presupuesto_mexico_2008_20164t_2017
 
 sources:
 - encoding: windows-1252
@@ -44,9 +44,9 @@ fields:
   osType: functional-classification:generic:level1:code
 - header: DESC_GPO_FUNCIONAL
   aliases:
+  - GRUPO_FUN_DESCRIPCION
   - "Descripci\xF3n de Grupo Funcional"
   - "Descripci\xF3n de Finalidad"
-  - GRUPO_FUN_DESCRIPCION
   options: {}
   osType: functional-classification:generic:level1:label
 
@@ -124,6 +124,7 @@ fields:
   osType: economic-classification:generic:level2:label
 
 - header: ID_PARTIDA_GENERICA
+  title: Partida Genérica
   aliases:
   - PARTIDA_GENERICA
   - "Partida Gen\xE9rica"
@@ -137,6 +138,7 @@ fields:
   osType: economic-classification:generic:level3:label
 
 - header: ID_PARTIDA_ESPECIFICA
+  title: Partida Específica
   aliases:
   - PARTIDA_ESPECIFICA
   - "Partida Espec\xEDfica"
@@ -151,6 +153,7 @@ fields:
 
 # Geo
 - header: ID_ENTIDAD_FEDERATIVA
+  title: Entidad Federativa
   aliases:
   - ENTIDAD
   - Entidad Federativa
@@ -265,6 +268,7 @@ fields:
   - ID_PPI
   - Clave de cartera
   - CLAVE_CARTERA
+  title: Clave de Cartera
   options: {}
   osType: budget-line-id
 
@@ -273,6 +277,7 @@ fields:
   aliases:
   - Adefas
   - ADEFAS
+  title: ADEFAS
   options:
     currency: MXN
   osType: value
@@ -283,36 +288,42 @@ fields:
   - "Importe Presupuesto de Egresos de la Federaci\xF3n"
   - "Importe Presupuesto de Egresos de la Federaci\xF3n (PEF)"
   - PEF_BRUTO_2017
+  title: Aprobado
   options:
     currency: MXN
   osType: value
 - header: MONTO_DEVENGADO
   aliases:
   - Devengado
+  title: Devengado
   options:
     currency: MXN
   osType: value
 - header: MONTO_EJERCICIO
   aliases:
   - Ejercicio
+  title: Ejercicio
   options:
     currency: MXN
   osType: value
 - header: MONTO_EJERCIDO
   aliases:
   - Ejercido
+  title: Ejercido
   options:
     currency: MXN
   osType: value
 - header: MONTO_MODIFICADO
   aliases:
   - Modificado
+  title: Modificado
   options:
     currency: MXN
   osType: value
 - header: MONTO_PAGADO
   aliases:
   - Pagado
+  title: Pagado
   options:
     currency: MXN
   osType: value
@@ -326,6 +337,6 @@ postprocessing:
     - MONTO_APROBADO
     - MONTO_PAGADO
     - MONTO_MODIFICADO
-    - MONTO_ADEFAS
     - MONTO_EJERCICIO
+    - MONTO_ADEFAS
 - processor: objeto-del-gasto
