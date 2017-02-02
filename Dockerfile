@@ -18,7 +18,7 @@ RUN git clone http://github.com/openspending/os-data-importers.git /app
 RUN mkdir /root/.gobble
 RUN rm -rf /var/cache/apk/*
 
-ENV DATAPIPELINES_REDIS_HOST="redis"
+ENV DPP_REDIS_HOST="redis"
 ENV CELERY_BROKER="amqp://guest:guest@mq:5672//"
 ENV CELERY_BACKEND="amqp://guest:guest@mq:5672//"
 ENV GIT_REPO=http://github.com/openspending/os-data-importers.git
