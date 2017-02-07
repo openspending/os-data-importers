@@ -34,12 +34,6 @@ fields:
   options: {}
   osType: functional-classification:generic:level1:code
 
-- header: FUNC2
-  title: Programa
-  options: {}
-  osType: functional-classification:generic:level2:code:full
-
-
 
 # Activity
 - header: PROGRAM1
