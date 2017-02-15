@@ -17,97 +17,119 @@ fields:
 - header: ADMIN1
   options: {}
   osType: administrative-classification:generic:level1:code
+  title: Gobierno Central
 
 - header: ADMIN2
   options: {}
   osType: administrative-classification:generic:level2:code:full
+  title: Entidad
 
 - header: ADMIN3
   options: {}
   osType: administrative-classification:generic:level3:code:full
+  title: Unidad Ejecutora
 
 
 # Geo
 - header: GEO1
   options: {}
   osType: geo-source:target:level1:code
+  title: Departamento
 - header: GEO2
   options: {}
   osType: geo-source:target:level2:code:full
+  title: Municipio
 
 
 # Functional Classification
 - header: FUNC1
   options: {}
   osType: functional-classification:generic:level1:code
+  title: Finalidad
 
 - header: FUNC2
   options: {}
   osType: functional-classification:generic:level2:code:full
+  title: Función
 
 - header: FUNC3
   options: {}
   osType: functional-classification:generic:level3:code:full
+  title: División
 
 
 # Economic Classification
 - header: ECON1
   options: {}
   osType: economic-classification:generic:level1:code
+  title: "Nivel 2: Económico"
 
 - header: ECON2
   options: {}
   osType: economic-classification:generic:level2:code:full
+  title: "Nivel 3: Económico"
 
 - header: ECON3
   options: {}
   osType: economic-classification:generic:level3:code:full
+  title: "Nivel 4: Económico"
 
 - header: ECON4
   options: {}
   osType: economic-classification:generic:level4:code:full
+  title: "Nivel 5: Económico"
 
 - header: ECON5
   options: {}
   osType: economic-classification:generic:level5:code:full
+  title: Grupo
 
 - header: ECON6
   options: {}
   osType: economic-classification:generic:level6:code:full
+  title: Sub-grupo
 
 - header: ECON7
   options: {}
   osType: economic-classification:generic:level7:code:full
+  title: Reglón
 
 # Financial Source
 - header: SOURCE_FN1
   options: {}
   osType: fin-source:generic:level1:code
+  title: Fuente agregada de financiamiento
 
 - header: SOURCE_FN2
   options: {}
   osType: fin-source:generic:level2:code:full
+  title: Fuente de financiamiento
 
 - header: SOURCE_FN3
   options: {}
   osType: fin-source:generic:level3:code:full
+  title: Organismo
 
 # Activity
 - header: PROGRAM1
   options: {}
   osType: activity:generic:program:code
+  title: Programa
 
 - header: PROGRAM2
   options: {}
   osType: activity:generic:subprogram:code:full
+  title: Sub-Programa
 
 - header: PROJECT1
   options: {}
   osType: activity:generic:project:code:full
+  title: Proyecto
 
 - header: PROJECT2
   options: {}
   osType: activity:generic:subproject:code:full
+  title: Actividad Obra
 
 
 # Measures
@@ -122,19 +144,19 @@ measures:
   mapping:
     APPROVED:
       PHASE_ID: "0"
-      PHASE: APPROVED
+      PHASE: Inicial
     RELEASED:
       PHASE_ID: "1"
-      PHASE: RELEASED
+      PHASE: Vigente
     COMMITTED:
       PHASE_ID: "2"
-      PHASE: COMMITTED
+      PHASE: Comprometido
     ACCRUED:
       PHASE_ID: "3"
-      PHASE: ACCRUED
+      PHASE: Devengado
     PAID:
       PHASE_ID: "4"
-      PHASE: PAID
+      PHASE: Pagado
   currency-conversion: {}
 
 #postprocessing:
