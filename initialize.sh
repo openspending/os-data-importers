@@ -7,6 +7,7 @@ npm install -g os-types
 ls -la /usr/lib/node_modules
 rm celerybeat-schedule || ls -la
 pwd
+rm -rf america europe
 cd eu-structural-funds
 export PYTHONPATH=$PYTHONPATH:`pwd`
 export DPP_PROCESSOR_PATH=`pwd`/common/processors

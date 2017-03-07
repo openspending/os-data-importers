@@ -15,6 +15,7 @@ RUN pip3 install os-gobble \
                  lxml
 #RUN pip3 install numpy==1.11.2 cython==0.25.1 pandas
 RUN git clone http://github.com/openspending/os-data-importers.git /app
+RUN cd /app && git clone http://github.com/os-data/eu-structural-funds.git
 RUN mkdir /root/.gobble
 RUN rm -rf /var/cache/apk/*
 
