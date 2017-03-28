@@ -1,4 +1,4 @@
-FROM python:3.5-alpine
+FROM python:3.6-alpine
 
 RUN apk add --update git libpq nodejs
 RUN apk add --update wget libffi libffi-dev ca-certificates python3-dev  \
