@@ -30,7 +30,7 @@ for column in new_columns:
 lookup_map = {}
 for kind in ['partida_específica',  'partida_generica',
              'capitulo', 'concepto']:
-    reader = csv.reader(open(os.path.join('data', 'objeto_del_gasto',  kind+'.csv')))
+    reader = csv.reader(open(os.path.join('data', 'ID_OBJETO_DEL_GASTO',  kind+'.csv')))
     next(reader)
     for row in reader:
         key, value, *_ = row
@@ -45,7 +45,7 @@ def process_row(row):
     year = int(row['CICLO'])
 
     # Skip the LAST year of the dataset (currently 2016) it has split columns already
-    if year >= 2016:
+    if year >= 2017:
         return row
 
     objeto = row['ID_CONCEPTO']
