@@ -1,6 +1,6 @@
 title: "Presupuesto México: 2008-2017"
-dataset-name: presupuesto_mexico_2008_20164t_2017
-resource-name: presupuesto_mexico_2008_20164t_2017
+dataset-name: presupuesto_mexico_2008_2017
+resource-name: presupuesto_mexico_2008_2017
 
 sources:
 - encoding: windows-1252
@@ -20,7 +20,7 @@ sources:
 - encoding: windows-1252
   url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2015_ra_ecd_epe.csv
 - encoding: windows-1252
-  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_avance_2016.csv
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2016_gf_ecd_epe.csv
 - encoding: windows-1252
   url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_2017.csv
 
