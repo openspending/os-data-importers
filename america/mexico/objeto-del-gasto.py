@@ -45,10 +45,10 @@ def process_row(row):
     year = int(row['CICLO'])
 
     # Skip the LAST year of the dataset (currently 2016) it has split columns already
-    if year >= 2016:
+    if year >= 2017:
         return row
 
-    objeto = row['ID_CONCEPTO']
+    objeto = row['ID_OBJETO_DEL_GASTO']
     if objeto:
         row['ID_CAPITULO'] = objeto[0] + '000'
         row['ID_CONCEPTO'] = objeto[:2] + '00'
