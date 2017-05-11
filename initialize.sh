@@ -15,7 +15,7 @@ pip3 install -r requirements.txt
 pip3 install -U git+git://github.com/openspending/datapackage-pipelines-fiscal.git
 pip3 install -U git+git://github.com/frictionlessdata/datapackage-pipelines.git
 pip3 install -U git+git://github.com/openspending/gobble.git
-pip3 install -U git+git://github.com/frictionlessdata/tabulator-py.git
+#pip3 install -U git+git://github.com/frictionlessdata/tabulator-py.git
 python3 -m common.generate
 cd ..
 dpp init
