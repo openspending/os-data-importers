@@ -108,17 +108,17 @@ fields:
   options: {}
   osType: economic-classification:generic:level1:label
 
-- header: ID_OBJETO_DEL_GASTO
+- header: ID_CONCEPTO
   title: Concepto
   aliases:
-  - ID_CONCEPTO
+  - ID_OBJETO_DEL_GASTO
   - Objeto del Gasto
   - Concepto
   options: {}
   osType: economic-classification:generic:level2:code:full
-- header: DESC_OBJETO_DEL_GASTO
+- header: DESC_CONCEPTO
   aliases:
-  - DESC_CONCEPTO
+  - DESC_OBJETO_DEL_GASTO
   - "Descripci\xF3n de Concepto"
   - "Descripci\xF3n de Objeto del Gasto"
   - CONCEPTO_DESCRIPCION
