@@ -334,8 +334,8 @@ postprocessing:
 - processor: clean-dashes
   parameters:
     columns:
-    - MONTO_EJERCIDO
     - MONTO_DEVENGADO
+    - MONTO_EJERCIDO
     - MONTO_APROBADO
     - MONTO_PAGADO
     - MONTO_MODIFICADO
