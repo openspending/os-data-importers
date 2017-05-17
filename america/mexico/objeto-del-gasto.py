@@ -48,12 +48,12 @@ def process_row(row):
     if year >= 2017:
         return row
 
-    objeto = row['ID_OBJETO_DEL_GASTO']
+    objeto = row['ID_CONCEPTO']
     if objeto:
         row['ID_CAPITULO'] = objeto[0] + '000'
-        row['ID_OBJETO_DEL_GASTO'] = objeto[:2] + '00'
+        row['ID_CONCEPTO'] = objeto[:2] + '00'
         row['DESC_CAPITULO'] = lookup(row['ID_CAPITULO'], 'capitulo', year)
-        row['DESC_OBJETO_DEL_GASTO'] = lookup(row['ID_OBJETO_DEL_GASTO'], 'concepto', year)
+        row['DESC_CONCEPTO'] = lookup(row['ID_CONCEPTO'], 'concepto', year)
 
         nb_generica_digits = 4 if year in (2008, 2009, 2010) else 3
 
