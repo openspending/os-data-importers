@@ -22,7 +22,7 @@ sources:
 - encoding: windows-1252
   url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2016_gf_ecd_epe.csv
 - encoding: windows-1252
-  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/2017/pef_ac01_avance_2017.csv
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_avance_2017.csv
 
 fields:
 # Fiscal year
