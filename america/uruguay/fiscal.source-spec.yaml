@@ -1,7 +1,7 @@
 title: "BOOST Uruguay"
 
 sources:
-- url: http://wbi.worldbank.org/boost/Data/boost/boostcms/files/field/country-attachments/boost_uruguay_v0.6_2011-2016_spanish.xlsx
+- url: http://wbi.worldbank.org/boost/Data/boost/boostcms/files/field/country-attachments/boost_uruguay_v0.7_2011-2016_spanish.xlsx
   sheet: 2
 
 fields:
@@ -9,6 +9,7 @@ fields:
 
 # Fiscal year
 - header: YEAR
+  title: Año
   options: {}
   osType: date:fiscal-year
 
@@ -16,10 +17,12 @@ fields:
 
 # Administrative Classification
 - header: ADMIN1
+  title: Inciso
   options: {}
   osType: administrative-classification:generic:level1:code
 
 - header: ADMIN2
+  title: Unidad Ejecutora
   options: {}
   osType: administrative-classification:generic:level2:code:full
 
@@ -27,31 +30,31 @@ fields:
 
 # Functional Classification
 - header: FUNC1
+  title: Área Programática
   options: {}
   osType: functional-classification:generic:level1:code
-
-- header: FUNC2
-  options: {}
-  osType: functional-classification:generic:level2:code:full
-
 
 
 # Activity
 - header: PROGRAM1
+  title: Programa
   options: {}
   osType: activity:generic:program:code
 
 - header: PROYECTO
+  title: Proyecto
   options: {}
   osType: activity:generic:project:code:full
 
 
 # Financial Source
 - header: SOURCE_FIN1
+  title: Financiamiento
   options: {}
   osType: fin-source:generic:level1:code
 
 - header: SOURCE_FIN2
+  title: Fuente de Financiamiento
   options: {}
   osType: fin-source:generic:level2:code:full
 
@@ -59,14 +62,17 @@ fields:
 
 # Economic Classification
 - header: ECON1
+  title: Grupo
   options: {}
   osType: economic-classification:generic:level1:code
 
 - header: ECON2
+  title: Subgrupo
   options: {}
   osType: economic-classification:generic:level2:code:full
 
 - header: ECON3
+  title: Objeto del gasto
   options: {}
   osType: economic-classification:generic:level3:code:full
 
@@ -74,10 +80,12 @@ fields:
 
 # Other
 - header: EXP_TYPE
+  title: Tipo de Gasto
   options: {}
   osType: expenditure-type:code
 
 - header: PHASE_ID
+  title: Fase
   options: {}
   osType: phase:id
 
@@ -88,17 +96,17 @@ fields:
 
 measures:
   currency: UYU
+  title: Monto (pesos corrientes)
   mapping:
     APPROVED:
       PHASE_ID: "0"
-      PHASE: APPROVED
+      PHASE: "Crédito apertura"
     MODIFIED:
       PHASE_ID: "1"
-      PHASE: MODIFIED
+      PHASE: "Crédito vigente"
     EXECUTED:
       PHASE_ID: "2"
-      PHASE: EXECUTED
-  currency-conversion: {}
+      PHASE: "Ejecutado"
 
 
 
