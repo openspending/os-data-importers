@@ -242,4 +242,3 @@ postprocessing:
   parameters:
     columns:
     - MONTO_PPEF
-- processor: objeto-del-gasto
