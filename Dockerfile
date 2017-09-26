@@ -7,7 +7,7 @@ RUN update-ca-certificates
 RUN npm install -g os-types
 RUN npm root -g && npm --version
 RUN ls -la `npm root -g`
-RUN pip3 install "os-gobble>=0.1.23" \
+RUN pip3 install "os-gobble>=0.1.26" \
                  celery \
                  cchardet \
                  datapackage-pipelines \
