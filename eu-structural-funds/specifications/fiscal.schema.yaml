@@ -1,0 +1,280 @@
+# Summary: This file encapsulates the schema part of the fiscal data package.
+# Reference: https://github.com/openspending/os-types/blob/master/src/os-types.json.
+# Author: Loic Jounot <loic@cyberpunk.bike>
+
+fields:
+
+  # Activity
+  # ---------------------------------------------------------------------------
+
+  # Hierarchy:
+  #   1. Program (period)
+  #   2. Project (program)
+  #   3. Sub-project (project)
+
+#  - name: funding_period_number
+#    title: Funding period number
+#    description: First, second or third funding period. #use the actual periods in the description
+#    osType: unknown:string
+
+  - name: funding_period
+    title: Funding period
+    description: One of three official funding period e.g. 2007-2013 #again, what do you refer to? One of the three? We only have 2007-2013 and 2014-2020
+    osType: fin-source:generic:level1:code
+
+  - name: cci_program_code
+    title: CCI code
+    description: CCI codes (e.g. 2014BG05M2OP001) identify operational programs (see codelist).
+    osType: administrative-classification:generic:level3:code:full
+
+  - name: cci_program_title
+    title: Operational program
+    description: The operational program matching the CCI code (see codelist)
+    osType: administrative-classification:generic:level3:label
+
+  - name: project_id
+    title: Project ID
+    description: Unique code of the project (generated if not)
+    osType: recipient:generic:legal-entity:receiving-project:code
+
+  - name: project_name
+    title: Project name
+    description: Name or short description of the project
+    osType: recipient:generic:legal-entity:receiving-project:label
+
+  - name: operational_programme
+    title: Operational Programme
+    description: information on which operational programme the project is governed by
+    osType: administrative-classification:generic:level4:code:full
+
+  # Recipient
+  # ---------------------------------------------------------------------------
+
+  - name: beneficiary_id
+    title: Beneficiary ID
+    description: The unique ID of the beneficiary
+    osType: recipient:generic:id
+
+  - name: beneficiary_name
+    title: Beneficiary name
+    description: Name of the beneficiary (person, company, organisation)
+    osType: recipient:generic:name
+
+  # Geo-source
+  # ---------------------------------------------------------------------------
+
+  - name: beneficiary_postal_code
+    title: Postal code
+    description: The postal code of the beneficiary
+    osType: geo-source:address:zip:code
+
+  - name: beneficiary_address
+    title: Address
+    description: Full address of the beneficiary to be geocoded
+    osType: geo-source:address:street-address:description
+
+  # Administrative classification
+  # ---------------------------------------------------------------------------
+
+  # This is a work-around: I would prefer a geographic hierachy if it existed.
+
+  # Hierarchy:
+  #   1. Level1 (country)
+  #   2. Level2 (region)
+  #   3. Level3 (city)
+
+  - name: beneficiary_country_code
+    title: Country code
+    description: Two digit ISO-3166 country code of the beneficiary
+    osType: geo-source:address:country:code
+
+  - name: beneficiary_country
+    title: Country
+    description: The country of the beneficiary
+    osType: geo-source:address:country:label
+
+  - name: beneficiary_nuts_code
+    title: NUTS code
+    description: NUTS code of the beneficiary region
+    osType: geo-source:address:region:code
+
+  - name: beneficiary_nuts_region
+    title: NUTS region
+    description: The region matching the NUTS code
+    osType: geo-source:address:region:label
+
+  - name: beneficiary_county
+    title: County
+    description: The county of the beneficiary
+    osType: geo-source:address:county:code
+
+  - name: beneficiary_city
+    title: City
+    description: The city of the beneficiary
+    osType: geo-source:address:city:code
+
+
+  # Fiscal attribute
+  # ---------------------------------------------------------------------------
+
+  - name: fund_acronym
+    title: Fund
+    description: Acronym of the fund (see codelist)
+    osType: fin-source:generic:level2:code:full
+
+  - name: fund_name
+    title: Fund name
+    description: Full name of the fund (see codelist)
+    osType: fin-source:generic:level2:label
+
+  # Functional classifications
+  # ---------------------------------------------------------------------------
+
+  - name: theme_code
+    title: Thematic objective code
+    description: Code of the thematic objective (see codelist)
+    osType: administrative-classification:generic:level1:code
+
+  - name: theme_name
+    title: Thematic objective
+    description: Display name of the thematic objective (see codelist)
+    osType: administrative-classification:generic:level1:label
+
+  - name: priority_number
+    title: Priority number
+    description: Priority number of the grant agreement (see codelist)
+    osType: administrative-classification:generic:level2:code:full
+
+  - name: priority_label
+    title: Priority
+    description: Description of the priority number of the grant agreement (see codelist) #is this the same as the project category?
+    osType: administrative-classification:generic:level2:label
+
+  # Dates
+  # ---------------------------------------------------------------------------
+
+  - name: starting_date
+    title: Starting date of the project
+    description: Starting date of the project
+    osType: date:fiscal:activity-start
+
+  - name: completion_date
+    title: Completion date of the project
+    description: Completion date of the project
+    osType: date:fiscal:activity-end
+
+  - name: approval_date
+    title: Approval date of the project
+    description: Date that the project is approved
+    osType: date:fiscal:activity-approval
+
+  - name: first_payment_date
+    title: Date of the first payment
+    description: The data at which the first payment was made (pre-financing)
+    osType: date:fiscal:first-payment
+
+  - name: final_payment_date
+    title: Date of the final payment
+    description: The date on which the final payment was made
+    osType: date:fiscal:final-payment
+
+  # Measures
+  # ---------------------------------------------------------------------------
+
+  - name: amount
+    title: Consolidated amount of the project
+    description: Consolidated amount of the project
+    osType: value
+
+  - name: amount_kind
+    title: Amount kind
+    description: Amount kind
+    osType: value-kind:code
+
+  - name: total_amount
+    title: Total cost of the project
+    description: Total cost of project
+    osType: value
+
+  - name: total_amount_applied
+    title: Total amount the project applied for
+    description: Total amount that project applied for
+    osType: value
+
+  - name: total_amount_eligible
+    title: Total eligible expenditure
+    description: Total eligible expenditure
+    osType: value
+
+  - name: member_state_amount
+    title: Amount of national and regional funding
+    description: Amount that is awarded from national funds
+    osType: value
+
+  - name: third_party_amount
+    title: Third party funding
+    description: The total amount that is additional to the action over third party funding
+    osType: value
+
+  - name: eu_cofinancing_amount
+    title: EU co-financing
+    description: The amount of co-financing from the EU
+    osType: value
+
+  - name: eu_cofinancing_amount_eligible
+    title: eligible EU co-financing
+    description: The amount of co-financing a project is eligible for
+    osType: value
+
+  - name: european_investment_bank_amount
+    title: European Investment Bank financing
+    description: The amount of co-financing received from the European Investment Bank (EIB)
+    osType: value
+
+  # Additionnal details
+  # ---------------------------------------------------------------------------
+
+  - name: beneficiary_url
+    title: Beneficiary website
+    description: URL of the beneficiary (or project)
+    osType: recipient:generic:url
+
+  - name: project_description
+    title: Project description
+    description: A paragraph description of the project
+    osType: recipient:generic:legal-entity:receiving-project:description
+
+  - name: project_status
+    title: Project status
+    description: Status of the project
+    osType: recipient:generic:legal-entity:receiving-project:status
+
+  - name: eu_cofinancing_rate
+    title: EU co-financing rate
+    description: The rate (percent) of co-financing from the EU
+    osType: unknown:string
+
+  - name: beneficiary_person
+    title: Beneficiary person
+    description: name of person responsible
+    osType: recipient:generic:legal-entity:point-of-contact:description
+
+  - name: management_authority
+    title: Management Authority
+    description: Management authority
+    osType: fin-source:generic:level3:code:full
+
+  - name: source
+    title: Source URL
+    description: A source URL
+    osType: unknown:string
+
+  - name: currency
+    title: Currency Code
+    description: Original currency code for amounts
+    osType: unknown:string
+
+  - name: internal_id
+    title: Unique Row Id
+    description: An automatically assigned row id
+    osType: transaction-id:code
