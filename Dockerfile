@@ -23,10 +23,11 @@ ADD package.json .
 ADD requirements.txt .
 RUN pip3 install -r eu-structural-funds/requirements.txt
 RUN pip3 install -r requirements.txt
-RUN npm install -g
+RUN npm install
 
 ADD . .
 
+ENV PATH "$PATH:/app/node_modules/.bin"
 ENV DPP_REDIS_HOST="redis"
 ENV CELERY_BROKER="amqp://guest:guest@mq:5672//"
 ENV CELERY_BACKEND="amqp://guest:guest@mq:5672//"
