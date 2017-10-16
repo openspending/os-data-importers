@@ -15,11 +15,17 @@ RUN apk add --update --no-cache \
     wget
 RUN update-ca-certificates
 WORKDIR /app
-ADD . .
 
+# Add requirements files before to avoid rebuilding dependencies
+# every time any file is modified.
+ADD eu-structural-funds/requirements.txt eu-structural-funds/requirements.txt
+ADD package.json .
+ADD requirements.txt .
 RUN pip3 install -r eu-structural-funds/requirements.txt
-RUN npm install -g
 RUN pip3 install -r requirements.txt
+RUN npm install -g
+
+ADD . .
 
 ENV DPP_REDIS_HOST="redis"
 ENV CELERY_BROKER="amqp://guest:guest@mq:5672//"
