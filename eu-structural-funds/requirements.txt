@@ -1,0 +1,12 @@
+chardet
+petl
+PyYaml
+datapackage-pipelines
+arrow
+xlrd
+python-slugify
+tabulator>=0.12.1
+requests
+datapackage
+lxml
+fingerprints
