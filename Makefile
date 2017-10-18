@@ -5,4 +5,5 @@ update-eu-structural-funds:
 		--prefix eu-structural-funds \
 		https://github.com/os-data/eu-structural-funds.git \
 		master \
-		--squash
+		--squash -m "Merge eu-structural-funds"
+
