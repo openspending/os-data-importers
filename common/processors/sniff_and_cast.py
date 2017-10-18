@@ -121,7 +121,7 @@ class BaseSniffer(object):
                         casted = caster(raw_value)
                         assert casted != CAST_ERROR, "CastError for %r, %s" % (fmt, raw_value)
                         assert self._post_cast_check_ok(fmt, casted), \
-                            "Post cast check failed for %r, %s" % (fmt, casted)
+                            "Post cast check failed for %r, %s, %r" % (fmt, casted, raw_value)
                         casters[idx] = (caster, successes+1, fmt)
                         success = True
                         break
@@ -198,7 +198,7 @@ class DateSniffer(BaseSniffer):
     format_guesses = DATE_FORMATS
 
     def jst_type_class(self, *args, **options):
-        return cast_date(args, options)
+        return cast_date(*args, **options)
 
 
 class NumberSniffer(BaseSniffer):
@@ -219,7 +219,7 @@ class NumberSniffer(BaseSniffer):
         return True
 
     def jst_type_class(self, *args, **options):
-        return cast_number(args, options)
+        return cast_number(*args, **options)
 
     # noinspection PyMethodMayBeStatic
     def _post_cast_check_ok(self, fmt, value):
