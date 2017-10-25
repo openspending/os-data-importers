@@ -1,7 +1,7 @@
 title: "BOOST Uruguay"
 
 sources:
-- url: http://wbi.worldbank.org/boost/Data/boost/boostcms/files/field/country-attachments/boost_uruguay_v0.7_2011-2016_spanish.xlsx
+- url: http://wbi.worldbank.org/boost/Data/boost/boostcms/files/field/country-attachments/boost_uruguay_v0.9_2011-2017_spanish.xlsx
   sheet: 2
 
 fields:
