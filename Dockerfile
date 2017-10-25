@@ -19,12 +19,15 @@ WORKDIR /app
 
 # Add requirements files before to avoid rebuilding dependencies
 # every time any file is modified.
-ADD eu-structural-funds/requirements.txt eu-structural-funds/requirements.txt
 ADD package.json .
-ADD requirements.txt .
-RUN pip3 install -r eu-structural-funds/requirements.txt
-RUN pip3 install -r requirements.txt
+ADD npm-shrinkwrap.json .
 RUN npm install
+
+ADD eu-structural-funds/requirements.txt eu-structural-funds/requirements.txt
+RUN pip3 install -r eu-structural-funds/requirements.txt
+
+ADD requirements.txt .
+RUN pip3 install -r requirements.txt
 
 ADD . .
 
