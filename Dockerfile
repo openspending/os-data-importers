@@ -1,28 +1,41 @@
 FROM python:3.6-alpine
 
-RUN apk add --update git libpq nodejs
-RUN apk add --update wget libffi libffi-dev ca-certificates python3-dev  \
-			  g++ build-base libxml2-dev libxslt-dev 
+RUN apk add --update --no-cache \
+    build-base \
+    ca-certificates \
+		g++ \
+    git \
+    libffi \
+    libffi-dev \
+    libpq \
+    libxml2-dev \
+    libxslt-dev \
+    nodejs \
+    python3-dev \
+    wget
 RUN update-ca-certificates
-RUN npm install -g os-types
-RUN npm root -g && npm --version
-RUN ls -la `npm root -g`
-RUN pip3 install os-gobble \
-                 celery \
-                 cchardet \
-                 datapackage-pipelines \
-                 datapackage-pipelines-fiscal \
-                 lxml
-#RUN pip3 install numpy==1.11.2 cython==0.25.1 pandas
-RUN git clone http://github.com/openspending/os-data-importers.git /app
-RUN cd /app && git clone http://github.com/os-data/eu-structural-funds.git
-RUN mkdir /root/.gobble
-RUN rm -rf /var/cache/apk/*
 
+WORKDIR /app
+
+# Add requirements files before to avoid rebuilding dependencies
+# every time any file is modified.
+ADD package.json .
+ADD npm-shrinkwrap.json .
+RUN npm install
+
+ADD eu-structural-funds/requirements.txt eu-structural-funds/requirements.txt
+RUN pip3 install -r eu-structural-funds/requirements.txt
+
+ADD requirements.txt .
+RUN pip3 install -r requirements.txt
+
+ADD . .
+
+ENV PATH "$PATH:/app/node_modules/.bin"
 ENV DPP_REDIS_HOST="redis"
 ENV CELERY_BROKER="amqp://guest:guest@mq:5672//"
 ENV CELERY_BACKEND="amqp://guest:guest@mq:5672//"
-ENV GIT_REPO=http://github.com/openspending/os-data-importers.git
+ENV GIT_REPO=https://github.com/openspending/os-data-importers.git
 
 EXPOSE 5000
 

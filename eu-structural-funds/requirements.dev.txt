@@ -1,0 +1,8 @@
+-r requirements.txt
+pylama
+mock
+pytest
+pytest-cov
+coverage
+coveralls
+pytest-capturelog
