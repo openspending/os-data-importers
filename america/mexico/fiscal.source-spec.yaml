@@ -4,8 +4,26 @@ resource-name: presupuesto_mexico_03t_2017
 
 sources:
 - encoding: windows-1252
-  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/prueba_ppef_2017.csv
-  
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2008.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2009.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2010.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2011.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2012.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2013_ra_ecd.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2014_ra_ecd.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2015_ra_ecd_epe.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/cuenta_publica_2016_gf_ecd_epe.csv
+- encoding: windows-1252
+  url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Bases_de_datos_presupuesto/CSV/pef_ac01_avance_2017.csv
+
 fields:
 # Fiscal year
 - header: CICLO
@@ -106,6 +124,34 @@ fields:
   - CONCEPTO_DESCRIPCION
   options: {}
   osType: economic-classification:generic:level2:label
+
+- header: ID_PARTIDA_GENERICA
+  title: Partida Genérica
+  aliases:
+  - PARTIDA_GENERICA
+  - "Partida Gen\xE9rica"
+  options: {}
+  osType: economic-classification:generic:level3:code:full
+
+- header: DESC_PARTIDA_GENERICA
+  aliases:
+  - "Descripci\xF3n de Partida Gen\xE9rica"
+  options: {}
+  osType: economic-classification:generic:level3:label
+
+- header: ID_PARTIDA_ESPECIFICA
+  title: Partida Específica
+  aliases:
+  - PARTIDA_ESPECIFICA
+  - "Partida Espec\xEDfica"
+  options: {}
+  osType: economic-classification:generic:level4:code:full
+- header: DESC_PARTIDA_ESPECIFICA
+  aliases:
+  - "Descripci\xF3n de Partida Espec\xEDfica"
+  - "Descripcion de Partida Espec\xEDfica"
+  options: {}
+  osType: economic-classification:generic:level4:label
 
 # Geo
 - header: ID_ENTIDAD_FEDERATIVA
@@ -229,10 +275,57 @@ fields:
   osType: budget-line-id
 
 # Measures
-- header: MONTO_PPEF
+- header: MONTO_ADEFAS
   aliases:
-  - PPEF_2017_BRUTO
-  title: Monto PPEF
+  - Adefas
+  - ADEFAS
+  title: ADEFAS
+  options:
+    currency: MXN
+  osType: value
+- header: MONTO_APROBADO
+  aliases:
+  - Aprobado
+  - PEF_2016
+  - "Importe Presupuesto de Egresos de la Federaci\xF3n"
+  - "Importe Presupuesto de Egresos de la Federaci\xF3n (PEF)"
+  - PEF_BRUTO_2017
+  title: Aprobado
+  options:
+    currency: MXN
+  osType: value
+- header: MONTO_DEVENGADO
+  aliases:
+  - Devengado
+  title: Devengado
+  options:
+    currency: MXN
+  osType: value
+- header: MONTO_EJERCICIO
+  aliases:
+  - Ejercicio
+  title: Ejercicio
+  options:
+    currency: MXN
+  osType: value
+- header: MONTO_EJERCIDO
+  aliases:
+  - Ejercido
+  title: Ejercido
+  options:
+    currency: MXN
+  osType: value
+- header: MONTO_MODIFICADO
+  aliases:
+  - Modificado
+  title: Modificado
+  options:
+    currency: MXN
+  osType: value
+- header: MONTO_PAGADO
+  aliases:
+  - Pagado
+  title: Pagado
   options:
     currency: MXN
   osType: value
@@ -241,4 +334,11 @@ postprocessing:
 - processor: clean-dashes
   parameters:
     columns:
-    - MONTO_PPEF
+    - MONTO_DEVENGADO
+    - MONTO_EJERCIDO
+    - MONTO_APROBADO
+    - MONTO_PAGADO
+    - MONTO_MODIFICADO
+    - MONTO_EJERCICIO
+    - MONTO_ADEFAS
+- processor: objeto-del-gasto
