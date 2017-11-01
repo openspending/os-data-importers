@@ -17,14 +17,14 @@ celery==4.1.0
 certifi==2017.7.27.1      # via requests
 chardet==3.0.4            # via normality, requests
 click==6.7                # via datapackage, datapackage-pipelines, flask, goodtables, jsontableschema, os-gobble, tableschema, tabulator
-datapackage-pipelines-fiscal==0.1.5
-datapackage-pipelines==1.4.0
+datapackage-pipelines-fiscal==0.1.6
+datapackage-pipelines==1.5.0
 datapackage==1.1.4        # via datapackage-pipelines, datapackage-pipelines-fiscal, os-gobble
 dataset==1.0.3            # via tellme
 et-xmlfile==1.0.1         # via openpyxl
 flask-cors==3.0.3         # via datapackage-pipelines
 flask-jsonpify==1.5.0     # via datapackage-pipelines
-flask==0.12.2             # via datapackage-pipelines, flask-cors, flask-jsonpify
+Flask==0.12.2             # via datapackage-pipelines, flask-cors, flask-jsonpify
 future==0.16.0            # via jsontableschema
 goodtables==0.7.6         # via os-gobble
 idna==2.6                 # via requests
@@ -34,7 +34,7 @@ itsdangerous==0.24        # via flask
 jdcal==1.3                # via openpyxl
 Jinja2==2.9.6             # via flask
 jsonlines==1.2.0          # via tabulator
-jsonpointer==1.13         # via datapackage
+jsonpointer==1.14         # via datapackage
 jsonschema==2.6.0         # via datapackage, goodtables, jsontableschema, tableschema
 jsontableschema==0.10.1   # via goodtables
 kombu==4.1.0              # via celery
@@ -42,14 +42,14 @@ linear-tsv==1.0.0         # via tabulator
 lxml==4.1.0
 Mako==1.0.7               # via alembic
 MarkupSafe==1.0           # via jinja2, mako
-mistune==0.7.4            # via datapackage-pipelines
-normality==0.5.0          # via dataset
+mistune==0.8              # via datapackage-pipelines
+normality==0.5.1          # via dataset
 openpyxl==2.4.9           # via tabulator
 os-gobble==0.1.28
 pybloom-live==2.3.1       # via tableschema-sql
 python-dateutil==2.6.1    # via alembic, jsontableschema, tableschema
 python-editor==1.0.3      # via alembic
-pytz==2017.2              # via celery
+pytz==2017.3              # via celery
 PyYAML==3.12              # via datapackage-pipelines, tellme
 redis==2.10.6             # via datapackage-pipelines
 regex==2017.9.23          # via awesome-slugify
@@ -61,7 +61,7 @@ sqlalchemy==1.1.14        # via alembic, datapackage-pipelines, dataset, tablesc
 tableschema-sql==0.10.3   # via datapackage-pipelines
 tableschema==1.0.8        # via datapackage, datapackage-pipelines, tableschema-sql
 tabulate==0.8.1           # via tellme
-tabulator==1.10.0         # via datapackage, datapackage-pipelines, jsontableschema, tableschema, tableschema-sql
+tabulator==1.11.1         # via datapackage, datapackage-pipelines, jsontableschema, tableschema, tableschema-sql
 tellme==0.2.6             # via goodtables
 unicodecsv==0.14.1        # via datapackage, jsontableschema, tableschema, tabulator
 Unidecode==0.4.21         # via awesome-slugify
