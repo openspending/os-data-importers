@@ -1,6 +1,6 @@
-title: "ppef 2017"
-dataset-name: ppef_2017
-resource-name: ppef_2017_prueba
+title: "Presupuesto México: 2008-2017"
+dataset-name: presupuesto_mexico_03t_2017
+resource-name: presupuesto_mexico_03t_2017
 
 sources:
 - encoding: windows-1252
