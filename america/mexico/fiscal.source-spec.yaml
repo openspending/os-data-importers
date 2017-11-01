@@ -1,6 +1,6 @@
 title: "Presupuesto México: 2008-2017"
-dataset-name: presupuesto_mexico
-resource-name: presupuesto_mexico
+dataset-name: presupuesto_mexico_03t_2017
+resource-name: presupuesto_mexico_03t_2017
 
 sources:
 - encoding: windows-1252
