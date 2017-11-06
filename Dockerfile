@@ -12,7 +12,9 @@ RUN apk add --update --no-cache \
     libxslt-dev \
     nodejs \
     python3-dev \
-    wget
+    wget \
+    libstdc++ 
+RUN apk --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --update add leveldb leveldb-dev 
 RUN update-ca-certificates
 
 WORKDIR /app
