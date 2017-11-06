@@ -17,7 +17,7 @@ celery==4.1.0
 certifi==2017.7.27.1      # via requests
 chardet==3.0.4            # via normality, requests
 click==6.7                # via datapackage, datapackage-pipelines, flask, goodtables, jsontableschema, os-gobble, tableschema, tabulator
-datapackage-pipelines-fiscal==0.1.8
+datapackage-pipelines-fiscal==0.1.9
 datapackage-pipelines==1.5.0
 datapackage==1.1.4        # via datapackage-pipelines, datapackage-pipelines-fiscal, os-gobble
 dataset==1.0.3            # via tellme
