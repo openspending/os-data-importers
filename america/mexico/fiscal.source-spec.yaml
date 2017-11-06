@@ -330,6 +330,8 @@ fields:
     currency: MXN
   osType: value
 
+deduplicate: yes
+
 postprocessing:
 - processor: clean-dashes
   parameters:
