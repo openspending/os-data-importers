@@ -45,7 +45,7 @@ markupsafe==1.0           # via jinja2, mako
 mistune==0.8              # via datapackage-pipelines
 normality==0.5.1          # via dataset
 openpyxl==2.4.9           # via tabulator
-os-gobble==0.1.28
+os-gobble==0.1.29
 plyvel==0.9               # via datapackage-pipelines
 pybloom-live==2.3.1       # via tableschema-sql
 python-dateutil==2.6.1    # via alembic, jsontableschema, tableschema
