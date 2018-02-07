@@ -1,6 +1,6 @@
-title: "BOOST Burkina-Faso 2005-2015 (fr)"
-dataset-name: boost_burkina_faso_2005_2015_fr
-resource-name: boost_burkina_faso_2005_2015_fr
+title: "Dominican Republic 2016 budget"
+dataset-name: dominican_republic_2016_budget
+resource-name: dominican_republic_2016_budget
 
 sources:
 - url: ./Bases de datos 2016.xlsx.gz
