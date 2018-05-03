@@ -5,7 +5,7 @@ rm celerybeat-schedule || ls -la
 cd eu-structural-funds
 export PYTHONPATH=$PYTHONPATH:`pwd`
 export DPP_PROCESSOR_PATH=`pwd`/common/processors
-python3 -m common.generate
+# python3 -m common.generate
 cd ..
 rm -f celeryd.pid
 rm -f celerybeat.pid
