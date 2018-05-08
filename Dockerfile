@@ -13,7 +13,8 @@ RUN apk add --update --no-cache \
     nodejs \
     python3-dev \
     wget \
-    libstdc++ 
+    libstdc++ \
+    postgresql-dev
 RUN apk --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --update add leveldb leveldb-dev 
 RUN update-ca-certificates
 

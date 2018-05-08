@@ -1,6 +1,7 @@
 #os-gobble
 celery<4
 cchardet
-datapackage-pipelines[speedup]>=1.6.17
-datapackage-pipelines-fiscal>=1.0.12
+datapackage-pipelines[speedup]>=1.6.18
+datapackage-pipelines-fiscal>=1.0.13
 lxml
+psycopg2-binary
