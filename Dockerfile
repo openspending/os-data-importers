@@ -42,4 +42,4 @@ ENV GIT_REPO=https://github.com/openspending/os-data-importers.git
 
 EXPOSE 5000
 
-CMD /app/docker/startup.sh
+CMD /app/initialize.sh
