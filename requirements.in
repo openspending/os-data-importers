@@ -1,5 +1,5 @@
 #os-gobble
-celery
+celery<4
 cchardet
 datapackage-pipelines[speedup]>=1.6.17
 datapackage-pipelines-fiscal>=1.0.12
