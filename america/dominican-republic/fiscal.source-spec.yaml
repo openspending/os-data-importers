@@ -1,6 +1,7 @@
 title: "Dominican Republic 2016 budget"
 dataset-name: dominican_republic_2016_budget
 resource-name: dominican_republic_2016_budget
+private: False
 
 sources:
 - url: ./Bases de datos 2016.xlsx.gz

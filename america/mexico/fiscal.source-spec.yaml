@@ -1,6 +1,8 @@
 title: "Presupuesto México: 2008-2018"
 dataset-name: presupuesto_mexico
 resource-name: presupuesto_mexico
+private: False
+
 sources:
 - encoding: windows-1252
   url: http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/BD_Cuenta_Publica/CSV/Cuenta_Publica_2008.csv

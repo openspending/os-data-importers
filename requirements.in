@@ -2,5 +2,5 @@ os-gobble
 celery
 cchardet
 datapackage-pipelines[speedup]
-datapackage-pipelines-fiscal<1.0
+datapackage-pipelines-fiscal>=1.0.12
 lxml

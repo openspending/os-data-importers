@@ -1,5 +1,6 @@
 title: "BOOST Uruguay"
 deduplicate: true
+private: False
 
 sources:
 - url: http://wbi.worldbank.org/boost/Data/boost/boostcms/files/field/country-attachments/boost_uruguay_v0.9_2011-2017_spanish.xlsx
