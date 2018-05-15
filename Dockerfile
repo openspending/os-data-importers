@@ -13,7 +13,8 @@ RUN apk add --update --no-cache \
     nodejs \
     python3-dev \
     wget \
-    libstdc++ 
+    libstdc++ \
+    postgresql-dev
 RUN apk --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --update add leveldb leveldb-dev 
 RUN update-ca-certificates
 
@@ -41,4 +42,4 @@ ENV GIT_REPO=https://github.com/openspending/os-data-importers.git
 
 EXPOSE 5000
 
-CMD /app/docker/startup.sh
+CMD /app/initialize.sh

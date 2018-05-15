@@ -1,6 +1,7 @@
-os-gobble
-celery
+#os-gobble
+celery<4
 cchardet
-datapackage-pipelines[speedup]
-datapackage-pipelines-fiscal
+datapackage-pipelines[speedup]>=1.6.18<1.7
+datapackage-pipelines-fiscal>=1.0.13
 lxml
+psycopg2-binary

@@ -1,4 +1,6 @@
 title: "Croatia Budget Plan"
+private: False
+owner-id: 667df60aa07c34260eae9b55b2778712
 
 sources:
 - url: http://datastore.openspending.org/source-files/Croatia-BudgetForecast-2016.xlsx

@@ -1,4 +1,6 @@
 title: "BOOST Guatemala Central"
+private: False
+owner-id: 667df60aa07c34260eae9b55b2778712
 
 sources:
 - url: http://wbi.worldbank.org/boost/Data/boost/boostcms/files/field/country-attachments/guatemala_boost_central_2014-2015sp.xlsx
