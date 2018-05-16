@@ -4,6 +4,7 @@ RUN apk add --update --no-cache \
     build-base \
     ca-certificates \
 		g++ \
+    redis \
     git \
     libffi \
     libffi-dev \
@@ -17,6 +18,7 @@ RUN apk add --update --no-cache \
     postgresql-dev
 RUN apk --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --update add leveldb leveldb-dev 
 RUN update-ca-certificates
+RUN mkdir -p /var/redis && chmod 775 /var/redis && chown redis.redis /var/redis
 
 WORKDIR /app
 
@@ -35,11 +37,11 @@ RUN pip3 install -r requirements.txt
 ADD . .
 
 ENV PATH "$PATH:/app/node_modules/.bin"
-ENV DPP_REDIS_HOST="redis"
-ENV CELERY_BROKER="amqp://guest:guest@mq:5672//"
-ENV CELERY_BACKEND="amqp://guest:guest@mq:5672//"
+ENV DPP_REDIS_HOST 127.0.0.1
+ENV DPP_CELERY_BROKER redis://localhost:6379/6
 ENV GIT_REPO=https://github.com/openspending/os-data-importers.git
 
 EXPOSE 5000
 
 CMD /app/initialize.sh
+
