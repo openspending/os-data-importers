@@ -8,7 +8,8 @@ IMG    := ${REPO}:${TAG}
 LATEST := ${REPO}:latest
 
 ci-build:
-	docker build -t ${IMG} -t ${LATEST} .
+	docker pull ${LATEST}
+	docker build --cache-from ${LATEST} -t ${IMG} -t ${LATEST} .
 
 ci-run:
 	docker run ${RUN_ARGS} --name ${NAME} -d ${LATEST}
