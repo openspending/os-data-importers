@@ -1,0 +1,22 @@
+language: generic
+services:
+- docker
+env:
+  global:
+  # DOCKER_USERNAME
+  - secure: NAiPbM0RZsSUH5jZ4FTkru0EiIjubaEioBRrtIL1KxfSTalhMXkLdhVPvL3wDZlhK1Nq8VzUKfSmLRDYI/yB9bgPTatpKCAeCqBExqZUNxcj+Q/VL4PM3YbVbCVCP9mEEvvYwh9WWDiUb2tEEJXhHD1R8hxcMWP0eb3vyk9VasgYrlx0W/fbqxR7m4tY0k+5mjwBYLSnWLedbkbmcDL8//JcmQO124LggkWhKCN/wL4mD8DN9IKKSN23RbIglandBKEY0iF26YXi9FUjbplkYLSCmIkY+bxuEQ1O8AUNq6Tl9UjAMPMgF98kGCh8FxV2q09x/tTBBtsxKCFZ3LKmTjDATT+TPg7L1bpHvzOY3t5P/F+SNJXEjT84QE342ewEolMtiTamt+5UiyvsZYhO9Csmjp/0ZkDGXWLmCvvvnrMIpnUncaV9J6di1DBbSEzfWNJu5XBeNR0TIbcp46sgrp263SYzliFOHTfBZYYtokgvX0z4mrI/Cxlarp78Ic56qSZ3rTn/HFu0fDvLc2gc+VkAePscRK1aAEYwj9pmrbjx6hGiDDrkAGV7nZGqnfQybo62vfI5Eu3dDPOLh2IniR/nBloDjxsw67oq5B3jIN2i+halj+IQ2/9+VxRuxLWoA+FbPLEOV3ZQjwvV0P7GSgZGlSgELIj9NjQHlB4qQ/w=
+  # DOCKER_PASSWORD
+  - secure: KJe4Oj+Vd54ciNL0ztTf5kemrPRiSM71eSjGIJUTCnmOqbJEZ4G/BfKV4FWgje2TaMeb+grXp4VX1aodspJ+jyafN8RFyBW2DD+ubUrIPAjVUpXmLRCmb6FrsKlgtpMDPGs4jxfTkGtXGtGpF8+Vi/tPTCXbB2HqhleFjrzJKzahobNOCdlZV7JqgADklkIPIbAurVFqtIFmwHoZnc9MTL9Dq6IK+tiN034BLI4yz124RgxjGXd+5B5OBCeF1TdRt1nXKt9L1f++Jk/jFP4yHsdIFIIx0H0Nj3pCZlvqpBevMUxhy9HOOcwZ93eVLQXzZSrk7gcw0cqhCCG3apswVHbX3SfQDUZxrrSMIquq2lNWQn+wnf5yR2o8IStzPgwjAoVRcEJE5toYUNHLRGujoumR4ir4y0fWL1fz8T2qRY9CitFvShqhWDsQxF8Wgl3wZ7SWu44HEHQ9OLkk1g1Imep+S7MIhZKK3/7SaZgepjnHPU2JcBWYFsApBUV0VhQCYDRlhzQYeh3/T3z1YvSylm2hcuSPrW/SODOktzSLEKkmKsnN/FpRuArC4neU0MaSBIecXXfSnH5jZm7rqB/UuYAILyMhELzDMjt7n1jCIw7uJm9vIuYg/Bz53dhBfZy064hYMW8ejvNeSoNXPLb6fQb+G25dhQnjM3aym/CAeiY=
+install:
+- make ci-build
+- make ci-run
+script:
+- make ci-test
+after_success:
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make ci-push-tag TAG="${TRAVIS_PULL_REQUEST_BRANCH////_}";
+  fi
+deploy:
+- provider: script
+  script: make ci-push
+  on:
+    branch: master
