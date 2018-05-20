@@ -8,7 +8,7 @@ export DPP_PROCESSOR_PATH=`pwd`/common/processors
 # python3 -m common.generate
 cd ..
 
-export DPP_REDIS_HOST=127.0.0.1
+export DPP_REDIS_HOST=redis
 export CELERY_BROKER=redis://localhost:6379/6
 echo "Starting Server"
 redis-server /etc/redis.conf --daemonize yes --dir /var/redis
