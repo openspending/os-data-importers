@@ -28,8 +28,8 @@ ADD package.json .
 ADD npm-shrinkwrap.json .
 RUN npm install
 
-ADD eu-structural-funds/requirements.txt eu-structural-funds/requirements.txt
-RUN pip3 install -r eu-structural-funds/requirements.txt
+# ADD eu-structural-funds/requirements.txt eu-structural-funds/requirements.txt
+# RUN pip3 install -r eu-structural-funds/requirements.txt
 
 ADD requirements.txt .
 RUN pip3 install -r requirements.txt
