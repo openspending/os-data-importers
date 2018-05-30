@@ -24,11 +24,6 @@ fields:
   options: {}
   osType: administrative-classification:generic:level1:code
 
-- header: department
-  title: Department
-  options: {}
-  osType: administrative-classification:generic:level1:code
-
 # Activity
 
 - header: programme_number
