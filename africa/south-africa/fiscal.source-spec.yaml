@@ -1,0 +1,87 @@
+title: Estimates of National Expenditure of South Africa 2015-16
+dataset-name: estimates-of-national-expenditure-south-africa-2015-16
+resource-name: estimates-of-national-expenditure-south-africa-2015-16
+
+private: False
+owner-id: b9d2af843f3a7ca223eea07fb608e62a
+
+sources:
+- url: "https://data.vulekamali.gov.za/dataset/ce3e6738-a5eb-422d-85ef-346bb6b09fc5/resource/812a39a4-e4fa-49e3-8feb-7a44f9e25851/download/estimates-of-national-expenditure-south-africa-2015-16.csv"
+
+fields:
+
+# Administrative Classification
+
+- header: vote_number
+  title: Vote Number
+  options: {}
+  osType: administrative-classification:generic:level1:code
+
+- header: department
+  title: Department
+  options: {}
+  osType: administrative-classification:generic:level1:label
+
+# Activity
+
+- header: programme_number
+  title: Programme Number
+  options: {}
+  osType: activity:generic:program:code
+
+- header: programme
+  options: {}
+  osType: activity:generic:program:label
+
+- header: subprogramme_number
+  title: Subprogramme Number
+  options: {}
+  osType: activity:generic:subprogram:code:part
+
+- header: subprogramme
+  title: Subprogramme
+  options: {}
+  osType: activity:generic:subprogram:label
+
+# Economic Classification
+
+- header: economic_classification_1
+  title: Economic Classification Level 1
+  options: {}
+  osType: economic-classification:generic:level1:code
+
+- header: economic_classification_2
+  title: Economic Classification Level 2
+  options: {}
+  osType: economic-classification:generic:level2:code:part
+
+- header: economic_classification_3
+  title: Economic Classification Level 3
+  options: {}
+  osType: economic-classification:generic:level3:code:part
+
+- header: economic_classification_4
+  title: Economic Classification Level 4
+  options: {}
+  osType: economic-classification:generic:level4:code:part
+
+# Date
+
+- header: financial_year
+  title: Fiscal Year
+  options: {}
+  osType: date:fiscal-year
+
+# Phase
+
+- header: budget_phase
+  options: {}
+  osType: phase:id
+
+# Amount
+
+- header: value
+  title: Value
+  options:
+    currency: ZAR
+  osType: value
