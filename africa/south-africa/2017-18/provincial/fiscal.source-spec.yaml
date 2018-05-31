@@ -81,6 +81,7 @@ fields:
 postprocessing:
   - processor: add_metadata
     parameters:
+      version: "1.0.0"
       homepage: 'https://vulekamali.gov.za/'
       countryCode: "ZA"
       description: This dataset includes expenditure data as published in the
