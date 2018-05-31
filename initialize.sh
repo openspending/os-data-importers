@@ -2,11 +2,11 @@
 set -e
 
 rm celerybeat-schedule || ls -la
-cd eu-structural-funds
-export PYTHONPATH=$PYTHONPATH:`pwd`
-export DPP_PROCESSOR_PATH=`pwd`/common/processors
+# cd eu-structural-funds
+# export PYTHONPATH=$PYTHONPATH:`pwd`
+# export DPP_PROCESSOR_PATH=`pwd`/common/processors
 # python3 -m common.generate
-cd ..
+# cd ..
 
 export DPP_REDIS_HOST=openspending-staging-redis-master
 export CELERY_BROKER=redis://localhost:6379/6
