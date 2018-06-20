@@ -4,6 +4,7 @@ set -e
 # Set up pipelines scheduler only if $OS_DPP_DISABLE_PIPELINES is not True
 if [[ -n "$OS_DPP_DISABLE_PIPELINES" && "$OS_DPP_DISABLE_PIPELINES" = "True" ]]; then
     echo "Pipelines are disabled."
+    dpp init
 else
     rm celerybeat-schedule || ls -la
     # cd eu-structural-funds
