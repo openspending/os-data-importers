@@ -13,3 +13,7 @@ We use the `datapackage-pipelines` framework to run the processing pipelines.
 ## Current Status
 
 #### Mexico 2008-2016 Budget (Cuenta Pública): [![Pipeline](http://staging.openspending.org/pipelines/badge/america/mexico/cuenta-publica)](http://staging.openspending.org/pipelines)
+
+## Development notes
+
+The env var `$OS_DPP_DISABLE_PIPELINES='True'` will prevent pipeline schedulers from being initialised. This is useful if you want to retain the pipeline server endpoint for your application, but not run the actual pipelines (e.g. for a staging server). 
