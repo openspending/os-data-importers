@@ -28,6 +28,6 @@ else
     /usr/bin/env os-types "[]" | true
 fi
 
-# Always run the dpp server, even if no pipelines are disabled. This is so the
+# Always run the dpp server, even if pipelines are disabled. This is so the
 # container can respond to web requests.
 dpp serve
