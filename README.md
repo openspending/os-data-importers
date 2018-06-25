@@ -12,7 +12,7 @@ We use the `datapackage-pipelines` framework to run the processing pipelines.
 
 ## Current Status
 
-#### Mexico 2008-2016 Budget (Cuenta Pública): [![Pipeline](http://staging.openspending.org/pipelines)
+#### Mexico 2008-2016 Budget (Cuenta Pública): [Pipeline](http://staging.openspending.org/pipelines)
 
 ## Development notes
 
