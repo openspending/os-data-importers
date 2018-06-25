@@ -28,8 +28,6 @@ flask-basicauth==0.2.0    # via datapackage-pipelines
 flask-cors==3.0.3         # via datapackage-pipelines
 flask-jsonpify==1.5.0     # via datapackage-pipelines
 flask==0.12.2             # via datapackage-pipelines, flask-basicauth, flask-cors, flask-jsonpify
-functools32==3.2.3.post2  # via jsonschema
-futures==3.2.0            # via s3transfer
 idna==2.6                 # via requests
 ijson==2.3                # via tabulator
 isodate==0.6.0            # via tableschema
