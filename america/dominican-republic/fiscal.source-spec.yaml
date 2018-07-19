@@ -13,12 +13,12 @@ sources:
     Ciclo: 2016
 
 # Didn't know how to map these:
-# OBJETO TIPO	
-# CONCEPTO	
-# CUENTA	
-# SUBCUENTA	
+# OBJETO TIPO
+# CONCEPTO
+# CUENTA
+# SUBCUENTA
 
-# Also, CAPÍTULO2 > SUBCAPÍTULO > UND EJECUTORA > INST. REC 
+# Also, CAPÍTULO2 > SUBCAPÍTULO > UND EJECUTORA > INST. REC
 # I mapped these to the administrative classification - is that correct?
 
 fields:
@@ -26,35 +26,35 @@ fields:
 - header: Ciclo
   title: Ciclo
   options: {}
-  osType: date:fiscal-year
+  columnType: date:fiscal-year
 
 # Activity
 - header: PROGRAMA2
   title: PROGRAMA2
   options: {}
-  osType: activity:generic:program:code
+  columnType: activity:generic:program:code
 
 - header: SUBPROGRAMA
   title: SUBPROGRAMA
   options: {}
-  osType: activity:generic:subprogram:code:full
+  columnType: activity:generic:subprogram:code
 
 
 # Functional Classification
 - header: FINALIDAD
   title: FINALIDAD
   options: {}
-  osType: functional-classification:generic:level1:code
+  columnType: functional-classification:generic:level1:code
 
 - header: FUNCION
   title: FUNCION
   options: {}
-  osType: functional-classification:generic:level2:code:full
+  columnType: functional-classification:generic:level2:code
 
 - header: SUBFUNCION
   title: SUBFUNCION
   options: {}
-  osType: functional-classification:generic:level3:code:full
+  columnType: functional-classification:generic:level3:code
 
 # Economic Classification
 - header: ECONOMICA_TIPO
@@ -62,46 +62,46 @@ fields:
   aliases:
     -  ECONOMICA - TIPO
   options: {}
-  osType: economic-classification:generic:level1:code
+  columnType: economic-classification:generic:level1:code
 
 - header: ECON_TITULO
   title: ECON TITULO
   aliases:
     - ECON TITULO
   options: {}
-  osType: economic-classification:generic:level2:code:full
+  columnType: economic-classification:generic:level2:code
 
 - header: ECON_SUBTITULO
   title: ECON SUBTITULO
   aliass:
     - ECON SUBTITULO
   options: {}
-  osType: economic-classification:generic:level3:code:full
+  columnType: economic-classification:generic:level3:code
 
 - header: ECON_GRUPO
   title: ECON GRUPO
   aliases:
     - ECON GRUPO
   options: {}
-  osType: economic-classification:generic:level4:code:full
+  columnType: economic-classification:generic:level4:code
 
 - header: ECON_SUBGRUPO
   title: ECON SUBGRUPO
   aliases:
     -  ECON SUBGRUPO
   options: {}
-  osType: economic-classification:generic:level5:code:full
+  columnType: economic-classification:generic:level5:code
 
 # Geo
 - header: REGION
   title: REGION
   options: {}
-  osType: geo-source:target:level1:code
+  columnType: geo-source:target:level1:code
 
 - header: PROVINCIA
   title: PROVINCIA
   options: {}
-  osType: geo-source:target:level2:code:full
+  columnType: geo-source:target:level2:code
 
 # Financial Source
 - header: FUENTES_FINANCIAMIENTO2
@@ -109,14 +109,14 @@ fields:
   aliases:
     - FUENTES FINANCIAMIENTO2
   options: {}
-  osType: fin-source:generic:level1:code
+  columnType: fin-source:generic:level1:code
 
 - header: FUENTE_ESPECIFICA
   title: FUENTE ESPECÍFICA
   aliases:
     - FUENTE ESPECÍFICA
   options: {}
-  osType: fin-source:generic:level2:code:full
+  columnType: fin-source:generic:level2:code
 
 # Administrative Classification
 - header: CAPITULO2
@@ -124,28 +124,28 @@ fields:
   aliases:
     - CAPÍTULO2
   options: {}
-  osType: administrative-classification:generic:level1:code
+  columnType: administrative-classification:generic:level1:code
 
 - header: SUBCAPITULO
   title: SUBCAPÍTULO
   aliases:
     - SUBCAPÍTULO
   options: {}
-  osType: administrative-classification:generic:level2:code:full
+  columnType: administrative-classification:generic:level2:code
 
 - header: UND_EJECUTORA
   title: UND EJECUTORA
   aliases:
     - UND EJECUTORA
   options: {}
-  osType: administrative-classification:generic:level3:code:full
+  columnType: administrative-classification:generic:level3:code
 
 - header: INST_REC
   title: INST. REC
   aliases:
     - INST. REC
   options: {}
-  osType: administrative-classification:generic:level4:code:full
+  columnType: administrative-classification:generic:level4:code
 
 # Measures
 - header: Presupuesto_Aprobado
@@ -154,7 +154,7 @@ fields:
     - Presupuesto Aprobado
   options:
     currency: DOP
-  osType: value
+  columnType: value
 
 - header: Presupuesto_Reformulado_Aprobado
   title: Presupuesto Reformulado Aprobado
@@ -162,7 +162,7 @@ fields:
     - Presupuesto Reformulado Aprobado
   options:
     currency: DOP
-  osType: value
+  columnType: value
 
 - header: Devengado_Aprobado
   title: Devengado Aprobado
@@ -170,7 +170,7 @@ fields:
     - Devengado Aprobado
   options:
     currency: DOP
-  osType: value
+  columnType: value
 
 
 
