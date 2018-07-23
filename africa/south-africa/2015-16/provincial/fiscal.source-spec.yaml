@@ -14,7 +14,7 @@ fields:
 
 - header: government
   options: {}
-  osType: geo-source:target:level1:code
+  columnType: geo-source:target:level1:code
   title: Government
 
 # Administrative Classification
@@ -22,47 +22,47 @@ fields:
 - header: department
   title: Department
   options: {}
-  osType: administrative-classification:generic:level1:code
+  columnType: administrative-classification:generic:level1:code
 
 # Activity
 
 - header: programme_number
   title: Programme Number
   options: {}
-  osType: activity:generic:program:code
+  columnType: activity:generic:program:code
 
 - header: programme
   options: {}
-  osType: activity:generic:program:label
+  columnType: activity:generic:program:label
 
 # Economic Classification
 
 - header: economic_classification_1
   title: Economic Classification Level 1
   options: {}
-  osType: economic-classification:generic:level1:code
+  columnType: economic-classification:generic:level1:code
 
 - header: economic_classification_2
   title: Economic Classification Level 2
   options: {}
-  osType: economic-classification:generic:level2:code:part
+  columnType: economic-classification:generic:level2:code
 
 - header: economic_classification_3
   title: Economic Classification Level 3
   options: {}
-  osType: economic-classification:generic:level3:code:part
+  columnType: economic-classification:generic:level3:code
 
 - header: economic_classification_4
   title: Economic Classification Level 4
   options: {}
-  osType: economic-classification:generic:level4:code:part
+  columnType: economic-classification:generic:level4:code
 
 # Date
 
 - header: financial_year
   title: Fiscal Year
   options: {}
-  osType: date:fiscal-year
+  columnType: date:fiscal-year
 
 # Phase
 
@@ -70,7 +70,7 @@ fields:
   aliases:
     - phase
   options: {}
-  osType: phase:id
+  columnType: phase:id
 
 # Amount
 
@@ -78,7 +78,7 @@ fields:
   title: Value
   options:
     currency: ZAR
-  osType: value
+  columnType: value
 
 
 postprocessing:

@@ -38,7 +38,7 @@ fields:
 # Fiscal year
 - header: Year
   options: {}
-  osType: date:fiscal-year
+  columnType: date:fiscal-year
 
 
 
@@ -46,20 +46,20 @@ fields:
 - header: admin1_code
   title: "Razdjel (O1) - Tekući proračun"
   options: {}
-  osType: administrative-classification:generic:level1:code
+  columnType: administrative-classification:generic:level1:code
 
 - header: admin1_label
   options: {}
-  osType: administrative-classification:generic:level1:label
+  columnType: administrative-classification:generic:level1:label
 
 - header: admin2_code
   label: "Glava (O2) - Tekući proračun"
   options: {}
-  osType: administrative-classification:generic:level2:code:full
+  columnType: administrative-classification:generic:level2:code
 
 - header: admin2_label
   options: {}
-  osType: administrative-classification:generic:level2:label
+  columnType: administrative-classification:generic:level2:label
 
 
 
@@ -67,29 +67,29 @@ fields:
 - header: activity1_code
   title: "Nac. prog. (P1)"
   options: {}
-  osType: activity:generic:program:code
+  columnType: activity:generic:program:code
 
 - header: activity1_label
   options: {}
-  osType: activity:generic:program:label
+  columnType: activity:generic:program:label
 
 - header: activity2_code
   title: "Program (P2)"
   options: {}
-  osType: activity:generic:subprogram:code:full
+  columnType: activity:generic:subprogram:code
 
 - header: activity2_label
   options: {}
-  osType: activity:generic:subprogram:label
+  columnType: activity:generic:subprogram:label
 
 - header: activity3_code
   title: "Korisnik proračuna"
   options: {}
-  osType: activity:generic:project:code:full
+  columnType: activity:generic:project:code
 
 - header: activity3_label
   options: {}
-  osType: activity:generic:project:label
+  columnType: activity:generic:project:label
 
 
 
@@ -97,22 +97,22 @@ fields:
 - header: func1_code
   title: "Funk. podr."
   options: {}
-  osType: functional-classification:generic:level1:code
+  columnType: functional-classification:generic:level1:code
 
 - header: func1_label
   options: {}
-  osType: functional-classification:generic:level1:label
+  columnType: functional-classification:generic:level1:label
 
 
 # Financial Source
 - header: fin_source_code
   title: "Izvor financiranja (I2)"
   options: {}
-  osType: fin-source:generic:level1:code
+  columnType: fin-source:generic:level1:code
 
 - header: fin_source_label
   options: {}
-  osType: fin-source:generic:level1:label
+  columnType: fin-source:generic:level1:label
 
 
 
@@ -120,29 +120,29 @@ fields:
 - header: econ1_code
   title: "Razred stavke (E1)"
   options: {}
-  osType: economic-classification:generic:level1:code
+  columnType: economic-classification:generic:level1:code
 
 - header: econ1_label
   options: {}
-  osType: economic-classification:generic:level1:label
+  columnType: economic-classification:generic:level1:label
 
 - header: econ2_code
   title: "Skupina stavke (E2)"
   options: {}
-  osType: economic-classification:generic:level2:code:full
+  columnType: economic-classification:generic:level2:code
 
 - header: econ2_label
   options: {}
-  osType: economic-classification:generic:level2:label
+  columnType: economic-classification:generic:level2:label
 
 - header: econ3_code
   title: "Podskup. stavke (E3)"
   options: {}
-  osType: economic-classification:generic:level3:code:full
+  columnType: economic-classification:generic:level3:code
 
 - header: econ3_label
   options: {}
-  osType: economic-classification:generic:level3:label
+  columnType: economic-classification:generic:level3:label
 
 
 

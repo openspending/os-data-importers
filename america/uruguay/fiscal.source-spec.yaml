@@ -14,7 +14,7 @@ fields:
 - header: YEAR
   title: Año
   options: {}
-  osType: date:fiscal-year
+  columnType: date:fiscal-year
 
 
 
@@ -22,12 +22,12 @@ fields:
 - header: ADMIN1
   title: Inciso
   options: {}
-  osType: administrative-classification:generic:level1:code
+  columnType: administrative-classification:generic:level1:code
 
 - header: ADMIN2
   title: Unidad Ejecutora
   options: {}
-  osType: administrative-classification:generic:level2:code:full
+  columnType: administrative-classification:generic:level2:code
 
 
 
@@ -35,31 +35,31 @@ fields:
 - header: FUNC1
   title: Área Programática
   options: {}
-  osType: functional-classification:generic:level1:code
+  columnType: functional-classification:generic:level1:code
 
 
 # Activity
 - header: PROGRAM1
   title: Programa
   options: {}
-  osType: activity:generic:program:code
+  columnType: activity:generic:program:code
 
 - header: PROYECTO
   title: Proyecto
   options: {}
-  osType: activity:generic:project:code:full
+  columnType: activity:generic:project:code
 
 
 # Financial Source
 - header: SOURCE_FIN1
   title: Financiamiento
   options: {}
-  osType: fin-source:generic:level1:code
+  columnType: fin-source:generic:level1:code
 
 - header: SOURCE_FIN2
   title: Fuente de Financiamiento
   options: {}
-  osType: fin-source:generic:level2:code:full
+  columnType: fin-source:generic:level2:code
 
 
 
@@ -67,17 +67,17 @@ fields:
 - header: ECON1
   title: Grupo
   options: {}
-  osType: economic-classification:generic:level1:code
+  columnType: economic-classification:generic:level1:code
 
 - header: ECON2
   title: Subgrupo
   options: {}
-  osType: economic-classification:generic:level2:code:full
+  columnType: economic-classification:generic:level2:code
 
 - header: ECON3
   title: Objeto del gasto
   options: {}
-  osType: economic-classification:generic:level3:code:full
+  columnType: economic-classification:generic:level3:code
 
 
 
@@ -85,16 +85,16 @@ fields:
 - header: EXP_TYPE
   title: Tipo de Gasto
   options: {}
-  osType: expenditure-type:code
+  columnType: expenditure-type:code
 
 - header: PHASE_ID
   title: Fase
   options: {}
-  osType: phase:id
+  columnType: phase:id
 
 - header: PHASE
   options: {}
-  osType: phase:label
+  columnType: phase:label
 
 
 measures:
