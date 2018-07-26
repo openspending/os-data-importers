@@ -16,8 +16,8 @@ else
     # export DPP_REDIS_HOST=openspending-staging-redis-master
     # export DPP_CELERY_BROKER=redis://localhost:6379/6
     echo "Starting Server"
-    redis-server /etc/redis.conf --daemonize yes --dir /var/redis
-    until [ `redis-cli ping | grep -c PONG` = 1 ]; do echo "Waiting 1s for Redis to load"; sleep 1; done
+    # redis-server /etc/redis.conf --daemonize yes --dir /var/redis
+    # until [ `redis-cli ping | grep -c PONG` = 1 ]; do echo "Waiting 1s for Redis to load"; sleep 1; done
 
     echo "Starting Celery schedulers"
     rm -f celeryd.pid
