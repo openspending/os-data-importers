@@ -3,7 +3,7 @@ FROM python:3.6-alpine
 RUN apk add --update --no-cache \
     build-base \
     ca-certificates \
-		g++ \
+	g++ \
     redis \
     git \
     libffi \
@@ -11,12 +11,13 @@ RUN apk add --update --no-cache \
     libpq \
     libxml2-dev \
     libxslt-dev \
+    nodejs-npm \
     nodejs \
     python3-dev \
     wget \
     libstdc++ \
     postgresql-dev
-RUN apk --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --update add leveldb leveldb-dev 
+RUN apk --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --update add leveldb leveldb-dev
 RUN update-ca-certificates
 RUN mkdir -p /var/redis && chmod 775 /var/redis && chown redis.redis /var/redis
 
@@ -25,7 +26,7 @@ WORKDIR /app
 # Add requirements files before to avoid rebuilding dependencies
 # every time any file is modified.
 ADD package.json .
-ADD npm-shrinkwrap.json .
+ADD package-lock.json .
 RUN npm install
 
 # ADD eu-structural-funds/requirements.txt eu-structural-funds/requirements.txt
