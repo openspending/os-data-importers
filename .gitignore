@@ -64,4 +64,4 @@ target/
 node_modules
 *.db
 *.zip
-repo/
+repos/
