@@ -6,3 +6,9 @@ venv
 *.db
 Dockerfile
 eu-structural-funds/
+
+america/dominican-republic/
+america/guatemala/
+america/uruguay/
+africa/
+europe/
