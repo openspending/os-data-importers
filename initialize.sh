@@ -6,7 +6,7 @@ if [[ -n "$OS_DPP_DISABLE_PIPELINES" && "$OS_DPP_DISABLE_PIPELINES" = "True" ]];
     echo "Pipelines are disabled."
     dpp init
 else
-    rm celerybeat-schedule || ls -la
+    # rm celerybeat-schedule || ls -la
     # cd eu-structural-funds
     # export PYTHONPATH=$PYTHONPATH:`pwd`
     # export DPP_PROCESSOR_PATH=`pwd`/common/processors
@@ -18,8 +18,8 @@ else
     rm -f celerybeat.pid
     dpp init
     SCHEDULER=1 python3 -m celery -b $DPP_CELERY_BROKER -A datapackage_pipelines.app -l INFO beat &
-    python3 -m celery -b $DPP_CELERY_BROKER --concurrency=1 -A datapackage_pipelines.app -Q datapackage-pipelines-management -l INFO worker &
-    python3 -m celery -b $DPP_CELERY_BROKER --concurrency=4 -A datapackage_pipelines.app -Q datapackage-pipelines -l INFO worker &
+    python3 -m celery -b $DPP_CELERY_BROKER --concurrency=1 -A datapackage_pipelines.app -Q datapackage-pipelines-management -l INFO worker -n worker1@%h &
+    python3 -m celery -b $DPP_CELERY_BROKER --concurrency=4 -A datapackage_pipelines.app -Q datapackage-pipelines -l INFO worker -n worker2@%h &
     /usr/bin/env os-types "[]" | true
 fi
 
