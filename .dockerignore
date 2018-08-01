@@ -6,4 +6,3 @@ venv
 *.db
 Dockerfile
 eu-structural-funds/
-sample/
