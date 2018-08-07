@@ -19,7 +19,7 @@
     "lodash": "^4.17.4",
     "lodash-addons": "^1.0.1",
     "moment": "^2.18.1",
-    "os-types": "^1.14.0",
+    "os-types": "v1.15.1",
     "superagent": "^3.6.3",
     "underscore": "^1.8.3"
   }

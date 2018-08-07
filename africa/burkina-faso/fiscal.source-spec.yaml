@@ -12,123 +12,123 @@ fields:
 - header: YEAR
   title: YEAR
   options: {}
-  osType: date:fiscal-year
+  columnType: date:fiscal-year
 
 # Functional Classification
 - header: SECTOR1
   title: SECTOR1
   options: {}
-  osType: functional-classification:generic:level1:code
+  columnType: functional-classification:generic:level1:code
 
 - header: SECTOR2
   title: SECTOR2
   options: {}
-  osType: functional-classification:generic:level2:code:full
+  columnType: functional-classification:generic:level2:code
 
 - header: FUNCTION1
   title: FUNCTION1
   options: {}
-  osType: functional-classification:generic:level3:code:full
+  columnType: functional-classification:generic:level3:code
 
 - header: FUNCTION2
   title: FUNCTION2
   options: {}
-  osType: functional-classification:generic:level4:code:full
+  columnType: functional-classification:generic:level4:code
 
 - header: FUNCTION3
   title: FUNCTION3
   options: {}
-  osType: functional-classification:generic:level5:code:full
+  columnType: functional-classification:generic:level5:code
 
 # Economic Classification
 - header: ECON1
   title: ECON1
   options: {}
-  osType: economic-classification:generic:level1:code
+  columnType: economic-classification:generic:level1:code
 
 - header: ECON2
   title: ECON2
   options: {}
-  osType: economic-classification:generic:level2:code:full
+  columnType: economic-classification:generic:level2:code
 
 - header: ECON3
   title: ECON3
   options: {}
-  osType: economic-classification:generic:level3:code:full
+  columnType: economic-classification:generic:level3:code
 
 - header: ECON4
   title: ECON4
   options: {}
-  osType: economic-classification:generic:level4:code:full
+  columnType: economic-classification:generic:level4:code
 
 # Geo
 - header: GEO1
   title: GEO1
   options: {}
-  osType: geo-source:target:code
+  columnType: geo-source:target:code
 
 # Financial Source
 - header: SOURCE_FIN1
   title: SOURCE_FIN1
   options: {}
-  osType: fin-source:generic:level1:code
+  columnType: fin-source:generic:level1:code
 
 - header: SOURCE_FIN2
   title: SOURCE_FIN2
   options: {}
-  osType: fin-source:generic:level2:code:full
+  columnType: fin-source:generic:level2:code
 
 # Administrative Classification
 - header: ADMIN1
   title: ADMIN1
   options: {}
-  osType: administrative-classification:generic:level1:code
+  columnType: administrative-classification:generic:level1:code
 
 - header: ADMIN2
   title: ADMIN2
   options: {}
-  osType: administrative-classification:generic:level2:code:full
+  columnType: administrative-classification:generic:level2:code
 
 - header: PROJECT1
   title: PROJECT1
   options: {}
-  osType: administrative-classification:generic:level3:code:full
+  columnType: administrative-classification:generic:level3:code
 
 # Measures
 - header: APPROVED
   title: APPROVED
   options:
     currency: XOF
-  osType: value
+  columnType: value
 
 - header: MODIFIED
   title: MODIFIED
   options:
     currency: XOF
-  osType: value
+  columnType: value
 
 - header: COMMITTED
   title: COMMITTED
   options:
     currency: XOF
-  osType: value
+  columnType: value
 
 - header: VALIDATED
   title: VALIDATED
   options:
     currency: XOF
-  osType: value
+  columnType: value
 
 - header: ORDERED_TO_PAY
   title: ORDERED_TO_PAY
   options:
     currency: XOF
-  osType: value
+  columnType: value
 
 - header: PAID
   title: PAID
   options:
     currency: XOF
-  osType: value
+  columnType: value
 
 deduplicate: yes

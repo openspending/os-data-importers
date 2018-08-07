@@ -12,134 +12,134 @@ fields:
 # Fiscal year
 - header: YEAR
   options: {}
-  osType: date:fiscal-year
+  columnType: date:fiscal-year
 
 
 # Administrative Classification
 - header: ADMIN1
   options: {}
-  osType: administrative-classification:generic:level1:code
+  columnType: administrative-classification:generic:level1:code
   title: Gobierno Central
 
 - header: ADMIN2
   options: {}
-  osType: administrative-classification:generic:level2:code:full
+  columnType: administrative-classification:generic:level2:code
   title: Entidad
 
 - header: ADMIN3
   options: {}
-  osType: administrative-classification:generic:level3:code:full
+  columnType: administrative-classification:generic:level3:code
   title: Unidad Ejecutora
 
 
 # Geo
 - header: GEO1
   options: {}
-  osType: geo-source:target:level1:code
+  columnType: geo-source:target:level1:code
   title: Departamento
 - header: GEO2
   options: {}
-  osType: geo-source:target:level2:code:full
+  columnType: geo-source:target:level2:code
   title: Municipio
 
 
 # Functional Classification
 - header: FUNC1
   options: {}
-  osType: functional-classification:generic:level1:code
+  columnType: functional-classification:generic:level1:code
   title: Finalidad
 
 - header: FUNC2
   options: {}
-  osType: functional-classification:generic:level2:code:full
+  columnType: functional-classification:generic:level2:code
   title: Función
 
 - header: FUNC3
   options: {}
-  osType: functional-classification:generic:level3:code:full
+  columnType: functional-classification:generic:level3:code
   title: División
 
 
 # Economic Classification
 - header: ECON1
   options: {}
-  osType: economic-classification:generic:level1:code
+  columnType: economic-classification:generic:level1:code
   title: "Nivel 2: Económico"
 
 - header: ECON2
   options: {}
-  osType: economic-classification:generic:level2:code:full
+  columnType: economic-classification:generic:level2:code
   title: "Nivel 3: Económico"
 
 - header: ECON3
   options: {}
-  osType: economic-classification:generic:level3:code:full
+  columnType: economic-classification:generic:level3:code
   title: "Nivel 4: Económico"
 
 - header: ECON4
   options: {}
-  osType: economic-classification:generic:level4:code:full
+  columnType: economic-classification:generic:level4:code
   title: "Nivel 5: Económico"
 
 - header: ECON5
   options: {}
-  osType: economic-classification:generic:level5:code:full
+  columnType: economic-classification:generic:level5:code
   title: Grupo
 
 - header: ECON6
   options: {}
-  osType: economic-classification:generic:level6:code:full
+  columnType: economic-classification:generic:level6:code
   title: Sub-grupo
 
 - header: ECON7
   options: {}
-  osType: economic-classification:generic:level7:code:full
+  columnType: economic-classification:generic:level7:code
   title: Reglón
 
 # Financial Source
 - header: SOURCE_FN1
   options: {}
-  osType: fin-source:generic:level1:code
+  columnType: fin-source:generic:level1:code
   title: Fuente agregada de financiamiento
 
 - header: SOURCE_FN2
   options: {}
-  osType: fin-source:generic:level2:code:full
+  columnType: fin-source:generic:level2:code
   title: Fuente de financiamiento
 
 - header: SOURCE_FN3
   options: {}
-  osType: fin-source:generic:level3:code:full
+  columnType: fin-source:generic:level3:code
   title: Organismo
 
 # Activity
 - header: PROGRAM1
   options: {}
-  osType: activity:generic:program:code
+  columnType: activity:generic:program:code
   title: Programa
 
 - header: PROGRAM2
   options: {}
-  osType: activity:generic:subprogram:code:full
+  columnType: activity:generic:subprogram:code
   title: Sub-Programa
 
 - header: PROJECT1
   options: {}
-  osType: activity:generic:project:code:full
+  columnType: activity:generic:project:code
   title: Proyecto
 
 - header: PROJECT2
   options: {}
-  osType: activity:generic:subproject:code:full
+  columnType: activity:generic:subproject:code
   title: Actividad Obra
 
 
 # Measures
 - header: PHASE_ID
-  osType: phase:id
+  columnType: phase:id
 
 - header: PHASE
-  osType: phase:label
+  columnType: phase:label
 
 measures:
   currency: GTQ

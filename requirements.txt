@@ -18,15 +18,16 @@ certifi==2017.7.27.1      # via requests
 chardet==3.0.4            # via requests
 click==6.7                # via datapackage, datapackage-pipelines, flask, tableschema, tabulator
 datapackage-pipelines-aws==0.0.20  # via datapackage-pipelines-fiscal
-datapackage-pipelines-fiscal==1.0.13
-datapackage-pipelines[speedup]==1.6.18
+datapackage-pipelines-fiscal==1.0.22
+datapackage-pipelines[speedup]==1.7.1
 datapackage==1.2.6        # via datapackage-pipelines, datapackage-pipelines-fiscal
 docutils==0.14            # via botocore
 elasticsearch==1.9.0      # via os-package-registry
 et-xmlfile==1.0.1         # via openpyxl
+flask-basicauth==0.2.0    # via datapackage-pipelines
 flask-cors==3.0.3         # via datapackage-pipelines
 flask-jsonpify==1.5.0     # via datapackage-pipelines
-flask==0.12.2             # via datapackage-pipelines, flask-cors, flask-jsonpify
+flask==0.12.2             # via datapackage-pipelines, flask-basicauth, flask-cors, flask-jsonpify
 idna==2.6                 # via requests
 ijson==2.3                # via tabulator
 isodate==0.6.0            # via tableschema
@@ -43,14 +44,15 @@ lxml==4.1.0
 markupsafe==1.0           # via jinja2
 mistune==0.8              # via datapackage-pipelines
 openpyxl==2.4.9           # via tabulator
-os-package-registry==0.0.13  # via datapackage-pipelines-fiscal
+os-api-cache==0.0.7       # via os-package-registry
+os-package-registry==0.0.16  # via datapackage-pipelines-fiscal
 plyvel==0.9               # via datapackage-pipelines
 psycopg2-binary==2.7.4
 pybloom-live==2.3.1       # via tableschema-sql
 python-dateutil==2.6.1    # via botocore, tableschema
 pytz==2017.3              # via celery
 pyyaml==3.12              # via datapackage-pipelines
-redis==2.10.6             # via datapackage-pipelines
+redis==2.10.6             # via datapackage-pipelines, os-api-cache
 regex==2017.9.23          # via awesome-slugify
 requests==2.18.4          # via datapackage, datapackage-pipelines, tableschema, tabulator
 rfc3986==1.1.0            # via tableschema
