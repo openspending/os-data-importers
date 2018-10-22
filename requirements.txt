@@ -18,7 +18,7 @@ certifi==2017.7.27.1      # via requests
 chardet==3.0.4            # via requests
 click==6.7                # via datapackage, datapackage-pipelines, flask, tableschema, tabulator
 datapackage-pipelines-aws==0.0.20  # via datapackage-pipelines-fiscal
-datapackage-pipelines-fiscal==1.1.1
+datapackage-pipelines-fiscal==1.1.2
 datapackage-pipelines[speedup]==1.7.1
 datapackage==1.2.6        # via datapackage-pipelines, datapackage-pipelines-fiscal
 docutils==0.14            # via botocore
