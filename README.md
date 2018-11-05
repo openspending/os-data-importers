@@ -18,4 +18,16 @@ To update a datapackage on OpenSpending, either because the source-spec has chan
 
 ## Development notes
 
-The env var `$OS_DPP_DISABLE_PIPELINES='True'` will prevent pipeline schedulers from being initialised. This is useful if you want to retain the pipeline server endpoint for your application, but not run the actual pipelines (e.g. for a staging server). 
+The env var `$OS_DPP_DISABLE_PIPELINES='True'` will prevent pipeline schedulers from being initialised. This is useful if you want to retain the pipeline server endpoint for your application, but not run the actual pipelines (e.g. for a staging server).
+
+A `docker-compose.dev.yaml` file is provided to start up os-data-importers without running the entire OpenSpending suite. This can be useful during source-spec development to iterate on the specs. Run like this:
+
+```sh
+# Start the services os-data-importers uses first:
+$ docker-compose -f docker-compose.dev.yaml up -d es redis fakes3 db
+# Give it a few seconds for the services to become available, then
+# Start up os-data-importers:
+$ docker-compose -f docker-compose.dev.yaml up --build os-data-importers
+```
+
+You can access the pipelines dashboard at: `http://localhost:5000`.
