@@ -5,4 +5,7 @@ env
 venv
 *.db
 Dockerfile
-eu-structural-funds/
+.dpp/
+
+repos/
+sample/

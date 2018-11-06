@@ -6,13 +6,6 @@ if [[ -n "$OS_DPP_DISABLE_PIPELINES" && "$OS_DPP_DISABLE_PIPELINES" = "True" ]];
     echo "Pipelines are disabled."
     dpp init
 else
-    # rm celerybeat-schedule || ls -la
-    # cd eu-structural-funds
-    # export PYTHONPATH=$PYTHONPATH:`pwd`
-    # export DPP_PROCESSOR_PATH=`pwd`/common/processors
-    # python3 -m common.generate
-    # cd ..
-
     echo "Starting Celery schedulers"
     rm -f celeryd.pid
     rm -f celerybeat.pid
@@ -25,4 +18,5 @@ fi
 
 # Always run the dpp server, even if pipelines are disabled. This is so the
 # container can respond to web requests.
+cd source-specs
 dpp serve
