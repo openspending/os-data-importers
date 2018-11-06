@@ -27,7 +27,7 @@ services:
       REPO_AGENT_BASE_DIR: /app/source-specs
       REPO_AGENT_UPDATE_FREQUENCY: 60
       REPO_AGENT_BROKER: redis://redis:6379/11
-      REPO_AGENT_REPOS: https://github.com/brew/example-source-spec
+      REPO_AGENT_REPOS: https://github.com/openspending/os-source-specs
     volumes:
       - source-specs:/app/source-specs
 
