@@ -14,20 +14,22 @@ RUN apk add --update --no-cache \
     libstdc++ \
     && apk --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --update add \
     leveldb \
-    leveldb-dev
+    leveldb-dev\
+    redis
 
 ADD requirements.txt .
-ADD initialize.sh initialize.sh
 
 RUN apk add --update --no-cache --virtual .build-deps \
     build-base \
     ca-certificates \
-	g++ \
+    g++ \
     nodejs-npm \
     && update-ca-certificates \
     && pip3 install -r requirements.txt \
     && npm install -g os-types@1.15.1 \
     && apk del --no-cache .build-deps
+
+ADD initialize.sh initialize.sh
 
 ENV PATH "$PATH:/app/node_modules/.bin"
 

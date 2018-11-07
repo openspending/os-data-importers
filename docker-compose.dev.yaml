@@ -23,7 +23,7 @@ services:
   repository-agent:
     image: 'openspending/repository-agent:29cea26'
     environment:
-      REPO_AGENT_CLEAN_ON_UPDATE: 'True'
+      REPO_AGENT_CLEAN_ON_UPDATE: 'False'
       REPO_AGENT_BASE_DIR: /app/source-specs
       REPO_AGENT_UPDATE_FREQUENCY: 60
       REPO_AGENT_BROKER: redis://redis:6379/11
