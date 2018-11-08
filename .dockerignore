@@ -6,3 +6,13 @@ venv
 *.db
 Dockerfile
 eu-structural-funds/
+repos/
+
+america/
+europe/
+sample/
+africa/burkina-faso/
+africa/south-africa/2016-*/
+africa/south-africa/2017-*/
+africa/south-africa/2018-*/
+africa/south-africa/2015-*/provincial/
