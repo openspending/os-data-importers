@@ -42,17 +42,24 @@ $ docker-compose -f docker-compose.dev.yaml up os-data-importers repository-agen
 
 You can access the pipelines dashboard at: `http://localhost:5000`.
 
-#### point docker-compose to a local repository
+#### Use a local repository in docker-compose
 
-If you're developing specs locally, you can point the repository agent to a local version of the specs repository using a volume. Change the following in your docker-compose.dev.yaml file:
+If you're developing specs locally, you can point the repository agent to a local version of the specs repository on the host machine using a volume. Create a `docker-compose.local.yaml` file and add the following:
 
 ```yaml
-  repository-agent:
-    ...
-    environment:
-      ...
-      REPO_AGENT_REPOS: /localrepo#simple  # points to 'simple' branch of local repo
-    volumes:
-      ...
-      - /path/to/local/source-spec/repo/os-source-specs:/localrepo
+version: "3.4"
+
+repository-agent:
+  environment:
+    REPO_AGENT_REPOS: /localrepo#simple  # points to 'simple' branch of local repo
+  volumes:
+    - /path/to/local/source-spec/repo/os-source-specs:/localrepo
 ```
+
+Start os-data-importers and repository-agent with the local file:
+
+```sh
+docker-compose -f docker-compose.dev.yaml -f docker-compose.local.yaml up os-data-importers repository-agent
+```
+
+Settings in `docker-compose.local.yaml` will override settings in `docker-compose.dev.yaml`. `docker-compose.local.yaml` is ignored by git and won't be commited.

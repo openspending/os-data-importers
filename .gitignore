@@ -66,3 +66,4 @@ node_modules
 *.zip
 repos/
 .dpp/
+docker-compose.local.yaml

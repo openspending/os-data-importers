@@ -6,6 +6,7 @@ venv
 *.db
 Dockerfile
 .dpp/
+docker-compose.*.yaml
 
 repos/
 sample/
