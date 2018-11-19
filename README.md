@@ -41,3 +41,18 @@ $ docker-compose -f docker-compose.dev.yaml up os-data-importers repository-agen
 ```
 
 You can access the pipelines dashboard at: `http://localhost:5000`.
+
+#### point docker-compose to a local repository
+
+If you're developing specs locally, you can point the repository agent to a local version of the specs repository using a volume. Change the following in your docker-compose.dev.yaml file:
+
+```yaml
+  repository-agent:
+    ...
+    environment:
+      ...
+      REPO_AGENT_REPOS: /localrepo#simple  # points to 'simple' branch of local repo
+    volumes:
+      ...
+      - /path/to/local/source-spec/repo/os-source-specs:/localrepo
+```
