@@ -29,6 +29,9 @@ RUN apk add --update --no-cache --virtual .build-deps \
     && npm install -g os-types@1.15.1 \
     && apk del --no-cache .build-deps
 
+# ADD repos/datapackage-pipelines-fiscal ./datapackage-pipelines-fiscal
+# RUN pip install -e ./datapackage-pipelines-fiscal
+
 ADD initialize.sh initialize.sh
 
 ENV PATH "$PATH:/app/node_modules/.bin"
