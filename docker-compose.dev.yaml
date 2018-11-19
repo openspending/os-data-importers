@@ -1,4 +1,4 @@
-version: "3"
+version: "3.4"
 
 services:
 
@@ -55,3 +55,8 @@ services:
 
 volumes:
   source-specs:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: "${PWD}/source-specs"
