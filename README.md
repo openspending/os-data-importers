@@ -44,7 +44,7 @@ You can access the pipelines dashboard at: `http://localhost:5000`.
 
 #### Use a local repository in docker-compose
 
-If you're developing specs locally, you can point the repository agent to a local version of the specs repository on the host machine using a volume. Create a `docker-compose.local.yaml` file and add the following:
+If you're developing specs locally, you can point the repository agent to a local version of the specs repository on the host machine using a volume. Note, the local path on the host machine **must** be a valid git repository. Create a `docker-compose.local.yaml` file and add the following:
 
 ```yaml
 version: "3.4"
