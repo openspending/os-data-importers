@@ -14,7 +14,6 @@ services:
       OS_ELASTICSEARCH_ADDRESS: es:9200
       OS_API_CACHE: redis
       DPP_REDIS_HOST: redis
-      DPP_CELERY_BROKER: redis://redis:6379/10
     ports:
       - "5000:5000"
     volumes:

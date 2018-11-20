@@ -12,6 +12,8 @@ else
 
     # Reset pipeline statuses
     redis-cli -h $DPP_REDIS_HOST -n 5 FLUSHDB
+    redis-cli -h $DPP_REDIS_HOST -n 10 FLUSHDB
+    export DPP_CELERY_BROKER=redis://$DPP_REDIS_HOST:6379/10
 
     SCHEDULER=1 python3 -m celery -b $DPP_CELERY_BROKER -A datapackage_pipelines.app -l INFO beat &
     python3 -m celery -b $DPP_CELERY_BROKER --concurrency=1 -A datapackage_pipelines.app -Q datapackage-pipelines-management -l INFO worker -n worker1@%h &
