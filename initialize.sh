@@ -19,9 +19,10 @@ else
     python3 -m celery -b $DPP_CELERY_BROKER --concurrency=1 -A datapackage_pipelines.app -Q datapackage-pipelines-management -l INFO worker -n worker1@%h &
     python3 -m celery -b $DPP_CELERY_BROKER --concurrency=4 -A datapackage_pipelines.app -Q datapackage-pipelines -l INFO worker -n worker2@%h &
     /usr/bin/env os-types "[]" | true
+
+    cd source-specs
 fi
 
 # Always run the dpp server, even if pipelines are disabled. This is so the
 # container can respond to web requests.
-cd source-specs
 dpp serve
