@@ -12,10 +12,10 @@ RUN apk add --update --no-cache \
     libxslt-dev \
     python3-dev \
     libstdc++ \
+    redis \
     && apk --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --update add \
     leveldb \
-    leveldb-dev\
-    redis
+    leveldb-dev
 
 ADD requirements.txt .
 
