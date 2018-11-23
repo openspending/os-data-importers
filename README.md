@@ -49,11 +49,12 @@ If you're developing specs locally, you can point the repository agent to a loca
 ```yaml
 version: "3.4"
 
-repository-agent:
-  environment:
-    REPO_AGENT_REPOS: /localrepo#simple  # points to 'simple' branch of local repo
-  volumes:
-    - /path/to/local/source-spec/repo/os-source-specs:/localrepo
+services:
+  repository-agent:
+    environment:
+      REPO_AGENT_REPOS: /localrepo#simple  # points to 'simple' branch of local repo
+    volumes:
+      - /path/to/local/source-spec/repo/os-source-specs:/localrepo
 ```
 
 Start os-data-importers and repository-agent with the local file:
