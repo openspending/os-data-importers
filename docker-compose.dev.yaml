@@ -4,6 +4,10 @@ services:
 
   os-data-importers:
     build: '.'
+    depends_on:
+      - redis
+      - es
+      - db
     environment:
       OS_DPP_DISABLE_PIPELINES: 'False'
       DPP_BASE_PATH: "/"
@@ -21,6 +25,8 @@ services:
 
   repository-agent:
     image: 'openspending/repository-agent:ddd5473'
+    depends_on:
+      - redis
     environment:
       REPO_AGENT_CLEAN_ON_UPDATE: 'False'
       REPO_AGENT_BASE_DIR: /app/source-specs
