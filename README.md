@@ -20,7 +20,7 @@ A few factors determine when your pipeline will next be run.
 
 **fiscal.source-spec.yaml has been updated**: os-data-importers checks for new and updated source-spec content from its known repositories every 5 minutes. If your fiscal.source.spec.yaml file has been updated, the pipeline will be marked as dirty, and rerun.
 
-::TODO:: **on your schedule**: if you fiscal.source-spec.yaml file has a schedule (cron) defined, your pipeline will be rerun according to the schedule. This ensures your data is up to date, even if your fiscal.source-spec.yaml hasn't changed.
+<!--::TODO:: **on your schedule**: if you fiscal.source-spec.yaml file has a schedule (cron) defined, your pipeline will be rerun according to the schedule. This ensures your data is up to date, even if your fiscal.source-spec.yaml hasn't changed.-->
 
 ## Development notes
 
