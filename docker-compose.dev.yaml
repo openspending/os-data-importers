@@ -1,35 +1,40 @@
-version: "3"
+version: "3.4"
 
 services:
 
   os-data-importers:
     build: '.'
+    depends_on:
+      - redis
+      - es
+      - db
     environment:
       OS_DPP_DISABLE_PIPELINES: 'False'
-      # Following settings used to allow custom S3-like datastore
-      # S3_ENDPOINT_URL: http://fakes3:4567
-      # USE_FAKE_S3: 'True'
-      # OS_S3_PORT: 4567
-
       DPP_BASE_PATH: "/"
       # DPP_BASIC_AUTH_USERNAME: openspending
       # DPP_BASIC_AUTH_PASSWORD: letmein
       DPP_DB_ENGINE: postgresql://postgres@db/postgres
-      # AWS_ACCESS_KEY_ID: fakes3
-      # AWS_SECRET_ACCESS_KEY: fake123
-      # OS_S3_HOSTNAME: fakes3
-      # OS_STORAGE_BUCKET_NAME: fakes3
       ELASTICSEARCH_ADDRESS: es:9200
       OS_ELASTICSEARCH_ADDRESS: es:9200
-      # S3_BUCKET_NAME: fakes3
       OS_API_CACHE: redis
       DPP_REDIS_HOST: redis
-      DPP_CELERY_BROKER: redis://redis:6379/10
     ports:
       - "5000:5000"
+    volumes:
+      - source-specs:/app/source-specs
 
-    # volumes:
-    #   - ~/src/dockerfiles/os-data-importers:/app
+  repository-agent:
+    image: 'openspending/repository-agent:ddd5473'
+    depends_on:
+      - redis
+    environment:
+      REPO_AGENT_CLEAN_ON_UPDATE: 'False'
+      REPO_AGENT_BASE_DIR: /app/source-specs
+      REPO_AGENT_UPDATE_FREQUENCY: 60
+      REPO_AGENT_BROKER: redis://redis:6379/11
+      REPO_AGENT_REPOS: https://github.com/openspending/os-source-specs#simple
+    volumes:
+      - source-specs:/app/source-specs
 
   redis:
     image: 'redis:3.2-alpine'
@@ -37,13 +42,6 @@ services:
       - 6379
     # ports:
     #   - "6379:6379"
-
-  fakes3:
-    image: openspending/fakes3:latest
-    expose:
-      - 4567
-    # ports:
-    #   - "4567:4567"
 
   es:
     image: bitnami/elasticsearch:5.6.4
@@ -59,3 +57,11 @@ services:
       - 5432
     # ports:
     #   - "5432:5432"
+
+volumes:
+  source-specs:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: "${PWD}/source-specs"

@@ -5,4 +5,10 @@ env
 venv
 *.db
 Dockerfile
-eu-structural-funds/
+.dpp/
+docker-compose.*.yaml
+
+repos/
+#repos/datapackage-pipelines/
+#repos/datapackage-pipelines-aws/
+sample/
