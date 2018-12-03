@@ -1,7 +1,6 @@
 celery<4
 cchardet
 datapackage-pipelines[speedup]>=2,<3
-#datapackage-pipelines-fiscal>=1.1.4,<2
-datapackage-pipelines-fiscal==1.2.0a0
+datapackage-pipelines-fiscal>=1.2.0,<2
 lxml
 psycopg2-binary
