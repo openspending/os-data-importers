@@ -18,10 +18,10 @@ celery==3.1.26.post2
 certifi==2017.7.27.1      # via requests
 chardet==3.0.4            # via requests
 click==6.7                # via dataflows, datapackage, datapackage-pipelines, flask, tableschema, tabulator
-dataflows==0.0.32         # via datapackage-pipelines
+dataflows==0.0.39         # via datapackage-pipelines
 datapackage-pipelines-aws==0.0.23  # via datapackage-pipelines-fiscal
 datapackage-pipelines-fiscal==1.2.0
-datapackage-pipelines[speedup]==2.0.0
+datapackage-pipelines[speedup]==2.1.0
 datapackage==1.5.1        # via dataflows, datapackage-pipelines, datapackage-pipelines-fiscal
 docutils==0.14            # via botocore
 elasticsearch==5.5.3      # via os-package-registry
@@ -30,6 +30,7 @@ flask-basicauth==0.2.0    # via datapackage-pipelines
 flask-cors==3.0.3         # via datapackage-pipelines
 flask-jsonpify==1.5.0     # via datapackage-pipelines
 flask==0.12.2             # via datapackage-pipelines, flask-basicauth, flask-cors, flask-jsonpify
+globster==0.1.0           # via datapackage-pipelines
 idna==2.6                 # via requests
 ijson==2.3                # via tabulator
 inquirer==2.5.1           # via dataflows
@@ -63,13 +64,14 @@ rfc3986==1.1.0            # via tableschema
 s3transfer==0.1.13        # via boto3
 six==1.11.0               # via blessings, datapackage, datapackage-pipelines-fiscal, flask-cors, isodate, jsonlines, linear-tsv, python-dateutil, tableschema, tableschema-sql, tabulator
 sqlalchemy==1.1.14        # via tableschema-sql, tabulator
-tableschema-sql==0.10.3   # via dataflows, datapackage-pipelines
+tableschema-sql==0.10.4   # via dataflows, datapackage-pipelines
 tableschema==1.2.5        # via datapackage, datapackage-pipelines, tableschema-sql
 tabulate==0.8.2           # via dataflows
-tabulator==1.14.0         # via datapackage, datapackage-pipelines, tableschema, tableschema-sql
+tabulator==1.19.0         # via datapackage, datapackage-pipelines, tableschema, tableschema-sql
 ujson==1.35               # via datapackage-pipelines
 unicodecsv==0.14.1        # via datapackage, tableschema, tabulator
 unidecode==0.4.21         # via awesome-slugify
 urllib3==1.22             # via botocore, elasticsearch, requests
 werkzeug==0.12.2          # via flask
 xlrd==1.1.0               # via tabulator
+xmljson==0.2.0            # via dataflows

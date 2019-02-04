@@ -36,7 +36,7 @@ A `docker-compose.dev.yaml` file is provided to start up os-data-importers with 
 # Start the services os-data-importers uses first:
 $ docker-compose -f docker-compose.dev.yaml up -d es redis fakes3 db
 # Give it a few seconds for the services to become available, then
-# Start up os-data-importers and the repository-agent:
+# start up os-data-importers and the repository-agent:
 $ docker-compose -f docker-compose.dev.yaml up os-data-importers repository-agent
 ```
 
