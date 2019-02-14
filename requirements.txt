@@ -20,7 +20,7 @@ chardet==3.0.4            # via requests
 click==6.7                # via dataflows, datapackage, datapackage-pipelines, flask, tableschema, tabulator
 dataflows==0.0.39         # via datapackage-pipelines
 datapackage-pipelines-aws==0.0.23  # via datapackage-pipelines-fiscal
-datapackage-pipelines-fiscal==1.2.0
+datapackage-pipelines-fiscal==1.2.3
 datapackage-pipelines[speedup]==2.1.1
 datapackage==1.5.1        # via dataflows, datapackage-pipelines, datapackage-pipelines-fiscal
 docutils==0.14            # via botocore
