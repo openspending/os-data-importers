@@ -1,3 +1,6 @@
+[![Gitter](https://img.shields.io/gitter/room/openspending/chat.svg)](https://gitter.im/openspending/chat)
+[![Travis](https://img.shields.io/travis/openspending/os-data-importers.svg)](https://travis-ci.org/openspending/os-data-importers)
+
 # OpenSpending Data Importers
 
 This app helps to keep data in OpenSpending as fresh as possible, by pro-actively fetching fiscal data from various data-portals and other official sources. By linking the data in OpenSpending to the exact source, we also gain more credibility for the data stored in the platform.
