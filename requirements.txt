@@ -20,7 +20,7 @@ chardet==3.0.4            # via requests
 click==6.7                # via dataflows, datapackage, datapackage-pipelines, flask, tableschema, tabulator
 dataflows==0.0.39         # via datapackage-pipelines
 datapackage-pipelines-aws==0.0.23  # via datapackage-pipelines-fiscal
-datapackage-pipelines-fiscal==1.2.3
+datapackage-pipelines-fiscal==1.2.4
 datapackage-pipelines[speedup]==2.1.1
 datapackage==1.5.1        # via dataflows, datapackage-pipelines, datapackage-pipelines-fiscal
 docutils==0.14            # via botocore
@@ -50,7 +50,7 @@ markupsafe==1.0           # via jinja2
 mistune==0.8              # via datapackage-pipelines
 openpyxl==2.4.9           # via tabulator
 os-api-cache==0.0.7       # via os-package-registry
-os-package-registry==0.0.17  # via datapackage-pipelines-fiscal
+os-package-registry==0.0.18  # via datapackage-pipelines-fiscal
 psycopg2-binary==2.7.4
 pybloom-live==2.3.1       # via tableschema-sql
 python-dateutil==2.6.1    # via botocore, tableschema
