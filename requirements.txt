@@ -48,7 +48,7 @@ kvfile==0.0.6             # via dataflows
 linear-tsv==1.0.0         # via tabulator
 lxml==4.1.0
 markupsafe==1.0           # via jinja2
-mistune==0.8              # via datapackage-pipelines
+mistune==0.8.1            # via datapackage-pipelines
 more-itertools==7.2.0     # via zipp
 openpyxl==3.0.1           # via tabulator
 os-api-cache==0.0.7       # via os-package-registry
