@@ -1,6 +1,6 @@
-celery<4
 cchardet
 datapackage-pipelines[speedup]>=2.1.13,<3
 datapackage-pipelines-fiscal>=1.2.7,<2
 lxml
 psycopg2-binary
+kombu>=4.4.0
