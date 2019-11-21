@@ -5,3 +5,4 @@ lxml
 psycopg2-binary
 kombu>=4.4.0
 tableschema-sql>=1.3.0
+sqlalchemy>=1.2
