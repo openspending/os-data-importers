@@ -61,7 +61,7 @@ pyyaml==3.12              # via datapackage-pipelines
 readchar==2.0.1           # via inquirer
 redis==3.3.11             # via datapackage-pipelines, os-api-cache
 regex==2017.9.23          # via awesome-slugify
-requests==2.18.4          # via datapackage, datapackage-pipelines, tableschema, tabulator
+requests==2.20.0          # via datapackage, datapackage-pipelines, tableschema, tabulator
 rfc3986==1.1.0            # via tableschema
 s3transfer==0.1.13        # via boto3
 six==1.11.0               # via blessings, datapackage, datapackage-pipelines-fiscal, flask-cors, isodate, jsonlines, linear-tsv, python-dateutil, tableschema, tableschema-sql, tabulator
