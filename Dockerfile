@@ -26,7 +26,7 @@ RUN apk add --update --no-cache --virtual .build-deps \
     nodejs-npm \
     && update-ca-certificates \
     && pip3 install -r requirements.txt \
-    && npm install -g os-types@1.16 \
+    && npm install -g os-types@1.17 \
     && apk del --no-cache .build-deps
 
 # ADD repos/datapackage-pipelines-fiscal ./datapackage-pipelines-fiscal
