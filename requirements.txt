@@ -29,7 +29,7 @@ et-xmlfile==1.0.1         # via openpyxl
 flask-basicauth==0.2.0    # via datapackage-pipelines
 flask-cors==3.0.3         # via datapackage-pipelines
 flask-jsonpify==1.5.0     # via datapackage-pipelines
-flask==0.12.2             # via datapackage-pipelines, flask-basicauth, flask-cors, flask-jsonpify
+flask==1.0                # via datapackage-pipelines, flask-basicauth, flask-cors, flask-jsonpify
 globster==0.1.0           # via datapackage-pipelines
 idna==2.6                 # via requests
 ijson==2.5.1              # via tabulator
@@ -38,7 +38,7 @@ inquirer==2.5.1           # via dataflows
 isodate==0.6.0            # via kvfile, tableschema
 itsdangerous==0.24        # via flask
 jdcal==1.3                # via openpyxl
-jinja2==2.9.6             # via dataflows, flask
+jinja2==2.10.3            # via dataflows, flask
 jmespath==0.9.3           # via boto3, botocore
 jsonlines==1.2.0          # via tabulator
 jsonpointer==1.14         # via datapackage
@@ -75,7 +75,7 @@ unicodecsv==0.14.1        # via datapackage, tableschema, tabulator
 unidecode==0.4.21         # via awesome-slugify
 urllib3==1.22             # via botocore, elasticsearch, requests
 vine==1.3.0               # via amqp, celery
-werkzeug==0.12.2          # via flask
+werkzeug==0.16.0          # via flask
 xlrd==1.1.0               # via tabulator
 xmljson==0.2.0            # via dataflows
 zipp==0.6.0               # via importlib-metadata
